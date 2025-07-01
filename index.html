@@ -1,31 +1,73 @@
-import json
-
-# Chargement du JSON depuis un fichier
-with open('pb_data.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
-
-# Regroupement par game (titre 1)
-grouped = {}
-for cmd, info in data.items():
-    game = info['game']
-    category = info['category']
-    if game not in grouped:
-        grouped[game] = []
-    grouped[game].append((category, cmd))
-
-# Tri des catégories pour chaque jeu
-for game in grouped:
-    grouped[game].sort(key=lambda x: x[0])
-
-# Génération HTML simple
-html = "<html><head><meta charset='utf-8'><title>Speedrun Categories</title></head><body>\n"
-for game, categories in sorted(grouped.items()):
-    html += f"<h1>{game}</h1>\n<ul>\n"
-    for category, cmd in categories:
-        html += f"<li><strong>{category}</strong>: <code>{cmd}</code></li>\n"
-    html += "</ul>\n"
-html += "</body></html>"
-
-# Sauvegarde
-with open('speedrun_categories.html', 'w', encoding='utf-8') as f:
-    f.write(html)
+<html><head><meta charset='utf-8'><title>Speedrun Categories</title></head><body>
+<h0>Autres</h0>
+<h1>2D Zelda Games</h1>
+<ul>
+<li><strong>Game Boy Color Trilogy</strong>: <code>!pb-zelda-gbc</code></li>
+</ul>
+<h1>A Link Between World's</h1>
+<ul>
+<li><strong>Any% - Normal Mode - Original</strong>: <code>!pb-albw</code></li>
+</ul>
+<h1>A Link to the Past</h1>
+<ul>
+<li><strong>Any% - Major Glitches</strong>: <code>!pb-alttp-mg</code></li>
+</ul>
+<h1>Echoes of Wisdom</h1>
+<ul>
+<li><strong>Any% - Unrestricted</strong>: <code>!pb-eow</code></li>
+</ul>
+<h1>Final Fantasy Adventure</h1>
+<ul>
+<li><strong>Any%</strong>: <code>!pb-ffa-any</code></li>
+<li><strong>Any% - Warpless</strong>: <code>!pb-ffa</code></li>
+</ul>
+<h1>Four Swords</h1>
+<ul>
+<li><strong>100% - DSi Solo</strong>: <code>!pb-fs-100</code></li>
+<li><strong>Any% - DSi Co-op</strong>: <code>!pb-fs-coop</code></li>
+<li><strong>Any% - DSi Solo</strong>: <code>!pb-fs</code></li>
+</ul>
+<h1>Link's Awakening DX</h1>
+<ul>
+<li><strong>Any% - No S&Q/WW/OoB</strong>: <code>!pb-ladx</code></li>
+</ul>
+<h1>Oracle of Ages</h1>
+<ul>
+<li><strong>Any%</strong>: <code>!pb-ooa</code></li>
+</ul>
+<h1>Oracle of Seasons</h1>
+<ul>
+<li><strong>All Essences</strong>: <code>!pb-oos</code></li>
+</ul>
+<h1>Oui-Oui : Une Journée au Pays des Jouets</h1>
+<ul>
+<li><strong>Any%</strong>: <code>!pb-oui</code></li>
+</ul>
+<h1>Phantom Hourglass</h1>
+<ul>
+<li><strong>Any% - DS/Emu</strong>: <code>!pb-ph</code></li>
+</ul>
+<h1>Talulu le Magicien</h1>
+<ul>
+<li><strong>Any%</strong>: <code>!pb-talulu</code></li>
+</ul>
+<h1>The Minish Cap</h1>
+<ul>
+<li><strong>Any%</strong>: <code>!pb-tmc</code></li>
+</ul>
+<h1>Vertical Force</h1>
+<ul>
+<li><strong>Any% - Easy</strong>: <code>!pb-vertf-easy</code></li>
+<li><strong>Any% - Hard</strong>: <code>!pb-vertf-hard</code></li>
+<li><strong>Any% - Normal</strong>: <code>!pb-vertf-normal</code></li>
+</ul>
+<h0>Pokémon</h0>
+<h1>Pokémon : Let's Go, Pikachu</h1>
+<ul>
+<li><strong>Any% - NMS</strong>: <code>!pb-lgp</code></li>
+</ul>
+<h1>Pokémon : Saphir Alpha</h1>
+<ul>
+<li><strong>Any% - Saphir Alpha - ENG</strong>: <code>!pb-sa</code></li>
+</ul>
+</body></html>
