@@ -1,0 +1,12 @@
+{
+  "The Legend of Zelda": {
+    "The Minish Cap": {
+      "Any%": "!pb-tmc"
+    },
+    "Four Swords": {
+      "Any%": "!pb-fs",
+      "Any% DSi Coop": "!pb-fs-coop",
+      "100%": "!pb-fs-100"
+    }
+  }
+}
