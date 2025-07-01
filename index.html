@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Copier au clic - Exemple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+        a.copy-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Legend of Zelda: The Minish Cap</h1>
+    <p>
+        Any% : <a href="#" class="copy-link" onclick="copyText('!pb-tmc'); return false;">!pb-tmc</a>
+    </p>
+
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`Texte copié dans le presse-papier : ${text}`);
+            }).catch(() => {
+                alert('Erreur lors de la copie.');
+            });
+        }
+    </script>
+</body>
+</html>
