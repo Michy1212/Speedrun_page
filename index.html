@@ -24,7 +24,7 @@
   <script>
     async function loadData() {
       try {
-        const response = await fetch('data.json');
+        const response = await fetch('data_pbs.json');
         if (!response.ok) throw new Error("Erreur chargement JSON");
         const data = await response.json();
 
