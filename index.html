@@ -1,81 +1,31 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Copier au clic depuis JSON</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; }
-    h1 { margin-top: 2rem; }
-    h2 { margin-top: 1.5rem; color: #444; }
-    a.copy-link {
-      color: blue;
-      cursor: pointer;
-      text-decoration: underline;
-      margin-right: 1rem;
-      display: inline-block;
-      margin-top: 0.2rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Liste des jeux et catégories</h1>
-  <div id="content">Chargement des données...</div>
+import json
 
-  <script>
-    async function loadData() {
-      try {
-        const response = await fetch('data_pbs.json');
-        if (!response.ok) throw new Error("Erreur chargement JSON");
-        const data = await response.json();
+# Chargement du JSON depuis un fichier
+with open('pb_data.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
 
-        const container = document.getElementById('content');
-        container.innerHTML = '';
+# Regroupement par game (titre 1)
+grouped = {}
+for cmd, info in data.items():
+    game = info['game']
+    category = info['category']
+    if game not in grouped:
+        grouped[game] = []
+    grouped[game].append((category, cmd))
 
-        // Parcourir groupes (jeux)
-        for (const [game, subgroups] of Object.entries(data)) {
-          const h1 = document.createElement('h1');
-          h1.textContent = game;
-          container.appendChild(h1);
+# Tri des catégories pour chaque jeu
+for game in grouped:
+    grouped[game].sort(key=lambda x: x[0])
 
-          // Parcourir sous-groupes (titres 2)
-          for (const [subgroup, categories] of Object.entries(subgroups)) {
-            const h2 = document.createElement('h2');
-            h2.textContent = subgroup;
-            container.appendChild(h2);
+# Génération HTML simple
+html = "<html><head><meta charset='utf-8'><title>Speedrun Categories</title></head><body>\n"
+for game, categories in sorted(grouped.items()):
+    html += f"<h1>{game}</h1>\n<ul>\n"
+    for category, cmd in categories:
+        html += f"<li><strong>{category}</strong>: <code>{cmd}</code></li>\n"
+    html += "</ul>\n"
+html += "</body></html>"
 
-            // Parcourir catégories
-            for (const [category, code] of Object.entries(categories)) {
-              const p = document.createElement('p');
-              p.textContent = `${category} : `;
-
-              const a = document.createElement('a');
-              a.textContent = code;
-              a.href = '#';
-              a.className = 'copy-link';
-              a.onclick = e => {
-                e.preventDefault();
-                copyText(code);
-              };
-
-              p.appendChild(a);
-              container.appendChild(p);
-            }
-          }
-        }
-      } catch (e) {
-        document.getElementById('content').textContent = 'Erreur : ' + e.message;
-      }
-    }
-
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert(`Texte copié dans le presse-papier : ${text}`);
-      }).catch(() => {
-        alert('Erreur lors de la copie.');
-      });
-    }
-
-    loadData();
-  </script>
-</body>
-</html>
+# Sauvegarde
+with open('speedrun_categories.html', 'w', encoding='utf-8') as f:
+    f.write(html)
