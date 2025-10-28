@@ -382,6 +382,247 @@
             color: #ffd43b;
             cursor: help;
         }
+        
+        .tabs-container {
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .tabs {
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            background: transparent;
+            border: none;
+            color: #aaa;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab.active {
+            background: rgba(0, 107, 181, 0.3);
+            color: #4dabf7;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Styles spécifiques aux runs marathon */
+        .marathon-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .marathon-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .marathon-header {
+            padding: 1.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+
+        .marathon-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+            z-index: 1;
+        }
+
+        .marathon-header-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .marathon-event-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .marathon-date {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: white;
+        }
+
+        .marathon-body {
+            padding: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .marathon-game-image {
+            flex-shrink: 0;
+            width: 80px;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .marathon-game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .marathon-content {
+            flex: 1;
+        }
+
+        .marathon-game-title {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .marathon-category {
+            color: #4dabf7;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .marathon-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .marathon-link {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .marathon-link.vod {
+            background: rgba(145, 70, 255, 0.2);
+            border-color: rgba(145, 70, 255, 0.5);
+            color: #d8b4fe;
+        }
+
+        .marathon-link.vod:hover {
+            background: rgba(145, 70, 255, 0.4);
+            color: white;
+        }
+
+        .marathon-link.debrief {
+            background: rgba(50, 205, 50, 0.2);
+            border-color: rgba(50, 205, 50, 0.5);
+            color: #90ee90;
+        }
+
+        .marathon-link.debrief:hover {
+            background: rgba(50, 205, 50, 0.4);
+            color: white;
+        }
+
+        .marathon-link::before {
+            font-size: 1.2rem;
+        }
+
+        .marathon-link.vod::before {
+            content: "🎥";
+        }
+
+        .marathon-link.debrief::before {
+            content: "📊";
+        }
+        
+        .marathon-times {
+            margin: 1rem 0;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #00a8ff;
+        }
+
+        .marathon-time, .pb-at-time {
+            margin: 0.3rem 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .marathon-time strong, .pb-at-time strong {
+            color: #4dabf7;
+        }
+
+        /* Adaptation responsive */
+        @media (max-width: 768px) {
+            .marathon-body {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .marathon-game-image {
+                align-self: center;
+            }
+            
+            .marathon-links {
+                justify-content: center;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
     </style>
 </head>
 <body>
@@ -394,6 +635,14 @@
                 <p><code>!pb [commande]</code> - Affiche le personal best correspondant</p>
             </div>
         </header>
+
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('speedruns')">Speedruns</button>
+                <button class="tab" onclick="switchTab('marathon')">Runs Marathon</button>
+            </div>
+
+            <div id="speedruns" class="tab-content active">
 <section class="category-section"><div class="category-header" style="background: #7c8100;">The Legend of Zelda</div><div class="games-grid"><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\2D Zelda Games.png" alt="2D Zelda Games"></div><div class="game-content"><h3 class="game-title">2D Zelda Games</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
@@ -402,7 +651,7 @@
                             <a href="http://www.speedrun.com/2dzelda/run/megl4kqy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">4h 59m 36s</a>
                             <span class="world-rank">🌍 🥈 2ème</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -417,7 +666,7 @@
                             <a href="http://www.speedrun.com/albw/run/y2w5ko6y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 39m 34s</a>
                             <span class="world-rank">🌍 #72</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : #7</span>
+                            <span class="french-rank">🇫🇷 : #7</span>
                             
                         </div>
                         
@@ -462,7 +711,7 @@
                             <a href="http://www.speedrun.com/the_legend_of_zelda_four_swords/run/yoqnk77z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">4h 44m 29s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -477,7 +726,7 @@
                             <a href="http://www.speedrun.com/the_legend_of_zelda_four_swords/run/m3wk8jqy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">20m 53s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         <div class="other-players">👥 Avec: <a href="https://www.speedrun.com/users/Tsval" target="_blank" rel="noopener noreferrer" class="player-badge">Tsval</a></div>
@@ -492,7 +741,7 @@
                             <a href="http://www.speedrun.com/the_legend_of_zelda_four_swords/run/y6gpx20m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">19m 20s</a>
                             <span class="world-rank">🌍 #4</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥈 2ème</span>
+                            <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
                         
@@ -507,7 +756,7 @@
                             <a href="http://www.speedrun.com/ladx/run/zpogwegm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">2m 17s</a>
                             <span class="world-rank">🌍 #33</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : #4</span>
+                            <span class="french-rank">🇫🇷 : #4</span>
                             
                         </div>
                         
@@ -522,7 +771,7 @@
                             <a href="http://www.speedrun.com/ladx/run/y9do2rem" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 07m 53s</a>
                             <span class="world-rank">🌍 #79</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : #10</span>
+                            <span class="french-rank">🇫🇷 : #10</span>
                             
                         </div>
                         
@@ -537,7 +786,7 @@
                             <a href="http://www.speedrun.com/ooa/run/zgogl80m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 44m 30s</a>
                             <span class="world-rank">🌍 #19</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥉 3ème</span>
+                            <span class="french-rank">🇫🇷 : 🥉 3ème</span>
                             
                         </div>
                         
@@ -552,7 +801,7 @@
                             <a href="http://www.speedrun.com/oos/run/y2wjx47y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 55m 04s</a>
                             <span class="world-rank">🌍 #33</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥉 3ème</span>
+                            <span class="french-rank">🇫🇷 : 🥉 3ème</span>
                             
                         </div>
                         
@@ -567,7 +816,7 @@
                             <a href="http://www.speedrun.com/tlozph/run/zgj6qknz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">3h 39m 37s</a>
                             <span class="world-rank">🌍 #8</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -582,8 +831,8 @@
                             <a href="http://www.speedrun.com/tmc/run/znx6ed9y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 37m 17s</a>
                             <span class="world-rank">🌍 #24</span>
                             <span class="best-rank">📈 Historique: #17</span>
-                            <span class="french-rank">🇫🇷 Actuel : #6</span>
-                            <span class="best-french-rank">📈 Historique FR : 🥉 3ème</span>
+                            <span class="french-rank">🇫🇷 : #6</span>
+                            <span class="best-french-rank">📈 Historique 🇫🇷 : 🥉 3ème</span>
                         </div>
                         
                     </div>
@@ -597,7 +846,7 @@
                             <a href="http://www.speedrun.com/tmcce/run/yo5jw7jz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">33m 35s</a>
                             <span class="world-rank">🌍 #4</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -612,7 +861,7 @@
                             <a href="http://www.speedrun.com/pkmnletsgo/run/z00edoez" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">3h 29m 28s</a>
                             <span class="world-rank">🌍 #52</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : #6</span>
+                            <span class="french-rank">🇫🇷 : #6</span>
                             
                         </div>
                         
@@ -627,7 +876,7 @@
                             <a href="http://www.speedrun.com/pkmnletsgoext/run/mkwkdpvm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">3h 39m 21s</a>
                             <span class="world-rank">🌍 #4</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         <div class="other-players">👥 Avec: <a href="https://www.speedrun.com/users/Tsval" target="_blank" rel="noopener noreferrer" class="player-badge">Tsval</a></div>
@@ -642,8 +891,8 @@
                             <a href="http://www.speedrun.com/pkmnoras/run/m3kjjrqy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">3h 06m 36s</a>
                             <span class="world-rank">🌍 #19</span>
                             <span class="best-rank">📈 Historique: #16</span>
-                            <span class="french-rank">🇫🇷 Actuel : 🥈 2ème</span>
-                            <span class="best-french-rank">📈 Historique FR : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥈 2ème</span>
+                            <span class="best-french-rank">📈 Historique 🇫🇷 : 🥇 1er</span>
                         </div>
                         
                     </div>
@@ -657,8 +906,8 @@
                             <a href="http://www.speedrun.com/pkmnredblue/run/yd4nv8vy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">1m 27s</a>
                             <span class="world-rank">🌍 #35</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : #4</span>
-                            <span class="best-french-rank">📈 Historique FR : 🥉 3ème</span>
+                            <span class="french-rank">🇫🇷 : #4</span>
+                            <span class="best-french-rank">📈 Historique 🇫🇷 : 🥉 3ème</span>
                         </div>
                         
                     </div>
@@ -672,7 +921,7 @@
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/yoed941z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">38m 41s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -687,7 +936,7 @@
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/mkwd743m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">10m 22s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -702,7 +951,7 @@
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/me2198qm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">15m 08s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -717,7 +966,7 @@
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/ylj1o42m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">9m 34s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -732,7 +981,7 @@
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/z00l6wjz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">1m 45s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -747,7 +996,7 @@
                             <a href="http://www.speedrun.com/ffa/run/yw2wggpy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">16m 38s</a>
                             <span class="world-rank">🌍 #5</span>
                             <span class="best-rank">📈 Historique: 🥉 3ème</span>
-                            <span class="french-rank">🇫🇷 Actuel : 🥈 2ème</span>
+                            <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
                         
@@ -762,7 +1011,7 @@
                             <a href="http://www.speedrun.com/ffa/run/y4njl52m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">16m 32s</a>
                             <span class="world-rank">🌍 #5</span>
                             <span class="best-rank">📈 Historique: 🥈 2ème</span>
-                            <span class="french-rank">🇫🇷 Actuel : 🥈 2ème</span>
+                            <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
                         
@@ -777,7 +1026,7 @@
                             <a href="http://www.speedrun.com/ffa/run/y28pgq5y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">2h 16m 36s</a>
                             <span class="world-rank">🌍 #7</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥈 2ème</span>
+                            <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
                         
@@ -792,7 +1041,7 @@
                             <a href="http://www.speedrun.com/noddy_dt/run/z162g17m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">17m 52s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -807,7 +1056,7 @@
                             <a href="http://www.speedrun.com/sma2/run/ylj6xqxm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">14m 04s</a>
                             <span class="world-rank">🌍 #30</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥈 2ème</span>
+                            <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
                         
@@ -822,7 +1071,7 @@
                             <a href="http://www.speedrun.com/sma2/run/yd4jlrxy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">13m 14s</a>
                             <span class="world-rank">🌍 #62</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥉 3ème</span>
+                            <span class="french-rank">🇫🇷 : 🥉 3ème</span>
                             
                         </div>
                         
@@ -852,7 +1101,7 @@
                             <a href="http://www.speedrun.com/magical_taruruuto-kun/run/y6gwdkjm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">17m 44s</a>
                             <span class="world-rank">🌍 #8</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -867,7 +1116,7 @@
                             <a href="http://www.speedrun.com/Vertical_Force/run/me2v8l8m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">13m 31s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -882,7 +1131,7 @@
                             <a href="http://www.speedrun.com/Vertical_Force/run/zg63wvjm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">29m 44s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -897,7 +1146,7 @@
                             <a href="http://www.speedrun.com/Vertical_Force/run/yoev2njz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">19m 09s</a>
                             <span class="world-rank">🌍 🥇 1er</span>
                             
-                            <span class="french-rank">🇫🇷 Actuel : 🥇 1er</span>
+                            <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
                         
@@ -905,13 +1154,91 @@
                     <button class="copy-link" onclick="copyText(this, '!pb-vertf-normal'); return false;">Copier</button>
                 </li>
             </ul></div></div></div></section>
+            </div>
+
+            <div id="marathon" class="tab-content">
+                <div class="games-grid">
+
+        <div class="marathon-card">
+            <div class="marathon-header" style="background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("marathon_images/IG2025.png") center/cover; background-size: cover; background-position: center;">
+                <div class="marathon-header-content">
+                    <div class="marathon-event-name">Interglitches 2025 - Amour, Gloire et PB</div>
+                    <div class="marathon-date">24/10/2025</div>
+                </div>
+            </div>
+            <div class="marathon-body">
+                <div class="marathon-game-image">
+                    <img src="images\The Minish Cap (Jap).png" alt="The Minish Cap">
+                </div>
+                <div class="marathon-content">
+                    <h3 class="marathon-game-title">The Minish Cap</h3>
+                    <span class="marathon-category">Firerod%</span>
+                    
+                <div class="marathon-times">
+                    <div class="marathon-time">⏱️ Temps marathon: <strong>34m 12s</strong></div>
+                    <div class="pb-at-time">📈 PB à l'époque: <strong>33m 45s</strong></div>
+                </div>
+            
+                    <div class="marathon-links">
+                        
+                        <a href="https://youtu.be/cUUM31iqzU4" target="_blank" rel="noopener noreferrer" class="marathon-link debrief">Débrief</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="marathon-card">
+            <div class="marathon-header" style="background: linear-gradient(135deg, #441723, #44172399);">
+                <div class="marathon-header-content">
+                    <div class="marathon-event-name">Segathon VII</div>
+                    <div class="marathon-date">08/06/2025</div>
+                </div>
+            </div>
+            <div class="marathon-body">
+                <div class="marathon-game-image">
+                    <img src="images\Talulu le Magicien (Jap).png" alt="Talulu le Magicien">
+                </div>
+                <div class="marathon-content">
+                    <h3 class="marathon-game-title">Talulu le Magicien</h3>
+                    <span class="marathon-category">Any%</span>
+                    
+                <div class="marathon-times">
+                    <div class="marathon-time">⏱️ Temps marathon: <strong>20m 07s</strong></div>
+                    <div class="pb-at-time">📈 PB à l'époque: <strong>17m 43s</strong></div>
+                </div>
+            
+                    <div class="marathon-links">
+                        <a href="https://www.youtube.com/watch?v=XvGy4mm6_uA" target="_blank" rel="noopener noreferrer" class="marathon-link vod">VOD</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>Dernière mise à jour: 28/10/2025 à 15:54</p>
+        <p>Dernière mise à jour: 28/10/2025 à 21:08</p>
     </footer>
 
     <script>
+        function switchTab(tabName) {
+            // Désactiver tous les onglets
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Activer l'onglet sélectionné
+            document.querySelector(`.tab[onclick="switchTab('${tabName}')"]`).classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
         async function copyText(button, text) {
             try {
                 await navigator.clipboard.writeText(text);
@@ -945,7 +1272,7 @@
         }, observerOptions);
 
         document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.game-card');
+            const cards = document.querySelectorAll('.game-card, .marathon-card');
             cards.forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
