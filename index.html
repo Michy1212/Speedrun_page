@@ -604,6 +604,49 @@
         .marathon-time strong, .pb-at-time strong {
             color: #4dabf7;
         }
+        
+        .pb-time-line {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .world-ranks-line, .french-ranks-line {
+            margin: 0.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .unofficial-pb {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 193, 7, 0.15);
+            border: 1px solid rgba(255, 193, 7, 0.4);
+            border-radius: 6px;
+            color: #ffc107;
+            font-size: 0.9rem;
+            border-left: 4px solid #ffc107;
+        }
+
+        /* Style pour les liens de catégorie marathon */
+        .marathon-category {
+            color: #4dabf7;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 0.2rem 0;
+        }
+
+        .marathon-category:hover {
+            color: #74c0fc;
+            text-decoration: underline;
+        }
 
         /* Adaptation responsive */
         @media (max-width: 768px) {
@@ -647,13 +690,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/2dzelda?h=Game_Boy_Color_Trilogy&x=wdm61pok" target="_blank" rel="noopener noreferrer" class="category-name">Game Boy Color Trilogy</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/2dzelda/run/megl4kqy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">4h 59m 36s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥈 2ème</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-zelda-gbc'); return false;">Copier</button>
@@ -662,13 +710,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/albw?h=Any-Normal_Mode-Original&x=zd35vnkn-6njwdjl4.5q84yvkl-dlorykjl.013kv9xq" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Normal Mode - Original</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/albw/run/y2w5ko6y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 39m 34s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #72</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : #7</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-albw'); return false;">Copier</button>
@@ -677,13 +730,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/alttp?h=Major_Glitches-any&x=n2y180m2-68kzoq82.p129ogdl" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Major Glitches</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/alttp/run/y2w7p0wy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">2m 53s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #94</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-alttp-mg'); return false;">Copier</button>
@@ -692,13 +750,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/eow?h=any-unrestricted&x=rkly4wwd-0nwm6or8.qoxrr3gq" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Unrestricted</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             
-                            
-                            
+                        </div>
+                        <div class="world-ranks-line">
                             
                             
                         </div>
+                        <div class="french-ranks-line">
+                            
+                            
+                        </div>
+                        <div class="unofficial-pb">⏱️ Temps non officialisé: <strong>38m 28s</strong></div>
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-eow'); return false;">Copier</button>
@@ -707,13 +770,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/the_legend_of_zelda_four_swords?h=100&x=jdz050g2" target="_blank" rel="noopener noreferrer" class="category-name">100% - DSi Solo</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/the_legend_of_zelda_four_swords/run/yoqnk77z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">4h 44m 29s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-fs-100'); return false;">Copier</button>
@@ -722,13 +790,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/the_legend_of_zelda_four_swords?h=Any_DSi_Co-op&x=jdz5456d" target="_blank" rel="noopener noreferrer" class="category-name">Any% - DSi Co-op</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/the_legend_of_zelda_four_swords/run/m3wk8jqy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">20m 53s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         <div class="other-players">👥 Avec: <a href="https://www.speedrun.com/users/Tsval" target="_blank" rel="noopener noreferrer" class="player-badge">Tsval</a></div>
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-fs-coop'); return false;">Copier</button>
@@ -737,13 +810,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/the_legend_of_zelda_four_swords?h=Any_DSi_Solo&x=jdrp0pl2" target="_blank" rel="noopener noreferrer" class="category-name">Any% - DSi Solo</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/the_legend_of_zelda_four_swords/run/y6gpx20m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">19m 20s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #4</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-fs'); return false;">Copier</button>
@@ -752,13 +830,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ladx?h=Any-ACE&x=zdnoo92q-789kkk6l.z195g80q" target="_blank" rel="noopener noreferrer" class="category-name">Any% - ACE</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/ladx/run/zpogwegm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">2m 17s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #33</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : #4</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ladx-ace'); return false;">Copier</button>
@@ -767,13 +850,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ladx?h=Any_No_SQWWOoB&x=z2755zk0" target="_blank" rel="noopener noreferrer" class="category-name">Any% - No S&Q/WW/OoB</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/ladx/run/y9do2rem" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 07m 53s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #79</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : #10</span>
                             
                         </div>
+                        <div class="unofficial-pb">⏱️ Temps non officialisé: <strong>1h 07m 08s</strong></div>
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ladx'); return false;">Copier</button>
@@ -782,13 +870,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ooa?h=Any&x=mkew7xk6" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/ooa/run/zgogl80m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 44m 30s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #19</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥉 3ème</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ooa'); return false;">Copier</button>
@@ -797,13 +890,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/oos?h=All_Essences&x=7kjvl6gk" target="_blank" rel="noopener noreferrer" class="category-name">All Essences</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/oos/run/y2wjx47y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 55m 04s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #33</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥉 3ème</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-oos'); return false;">Copier</button>
@@ -812,13 +910,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/tlozph?h=Any1-ds-emu&x=jdrqr95k-ylq3wgz8.1py74v81" target="_blank" rel="noopener noreferrer" class="category-name">Any% - DS/Emu</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/tlozph/run/zgj6qknz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">3h 39m 37s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #8</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        <div class="unofficial-pb">⏱️ Temps non officialisé: <strong>3h 35m 42s</strong></div>
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ph'); return false;">Copier</button>
@@ -827,13 +930,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/tmc?h=Any&x=wdmmv4dq" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/tmc/run/znx6ed9y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">1h 37m 17s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #24</span>
                             <span class="best-rank">📈 Historique: #17</span>
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : #6</span>
                             <span class="best-french-rank">📈 Historique 🇫🇷 : 🥉 3ème</span>
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-tmc'); return false;">Copier</button>
@@ -842,13 +950,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/tmcce?h=Firerod&x=z27vw7z2" target="_blank" rel="noopener noreferrer" class="category-name">Firerod%</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/tmcce/run/yo5jw7jz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">33m 35s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #4</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-tmc-firerod'); return false;">Copier</button>
@@ -857,13 +970,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/pkmnletsgo?h=Any_NMS-Pikachu-ENG-switch-1&x=zdn151xk-2lggrm7l.5lm4dmjl-789j375n.jqz5jv8q-e8mgg4x8.q8k7e26q" target="_blank" rel="noopener noreferrer" class="category-name">Any% - NMS</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/pkmnletsgo/run/z00edoez" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">3h 29m 28s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #52</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : #6</span>
                             
                         </div>
+                        <div class="unofficial-pb">⏱️ Temps non officialisé: <strong>3h 17m 19s</strong></div>
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-lgp'); return false;">Copier</button>
@@ -872,13 +990,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/pkmnletsgoext?h=True_Co-op-Pikachu&x=q25go38d-ylpm95dl.21g2zx6l" target="_blank" rel="noopener noreferrer" class="category-name">True Co-op</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/pkmnletsgoext/run/mkwkdpvm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">3h 39m 21s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #4</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         <div class="other-players">👥 Avec: <a href="https://www.speedrun.com/users/Tsval" target="_blank" rel="noopener noreferrer" class="player-badge">Tsval</a></div>
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-lgp-coop'); return false;">Copier</button>
@@ -887,13 +1010,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/pkmnoras?h=Any-Alpha_Sapphire-ENG&x=zd378y2n-r0nwdd8q.pxqkxy19-ylq0zv8r.013xmkx1" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Saphir Alpha - ENG</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/pkmnoras/run/m3kjjrqy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">3h 06m 36s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #19</span>
                             <span class="best-rank">📈 Historique: #16</span>
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             <span class="best-french-rank">📈 Historique 🇫🇷 : 🥇 1er</span>
                         </div>
+                        <div class="unofficial-pb">⏱️ Temps non officialisé: <strong>3h 04m 30s</strong></div>
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-sa'); return false;">Copier</button>
@@ -902,13 +1030,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/pkmnredblue?h=Any-eng&x=02qvyl9d-68k4rkql.5lm66541" target="_blank" rel="noopener noreferrer" class="category-name">Any% - ENG</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/pkmnredblue/run/yd4nv8vy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">1m 27s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #35</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : #4</span>
                             <span class="best-french-rank">📈 Historique 🇫🇷 : 🥉 3ème</span>
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-red-any'); return false;">Copier</button>
@@ -917,13 +1050,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=All_Levels-Wii&x=9d8gp66k-789ky03l.8107xkol" target="_blank" rel="noopener noreferrer" class="category-name">All Levels</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/yoed941z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">38m 41s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-billy'); return false;">Copier</button>
@@ -932,13 +1070,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Broomstick_Grand_Prix-Wii&x=w20y0w5k-p8591x0n.jqz40w2l" target="_blank" rel="noopener noreferrer" class="category-name">Broomstick Grand Prix</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/mkwd743m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">10m 22s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-billy-bgp'); return false;">Copier</button>
@@ -947,13 +1090,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Green_Dragon_Attack-Wii&x=rkljwqnd-ylpv4o6l.21dd28p1" target="_blank" rel="noopener noreferrer" class="category-name">Green Dragon Attack</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/me2198qm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">15m 08s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-billy-gda'); return false;">Copier</button>
@@ -962,13 +1110,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Spell_Book_Chaos-Wii&x=ndx1ymr2-onv6me78.jqz4022l" target="_blank" rel="noopener noreferrer" class="category-name">Spell Book Chaos</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/ylj1o42m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">9m 34s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-billy-sbc'); return false;">Copier</button>
@@ -977,13 +1130,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Wizard_School&x=wdm80wo2" target="_blank" rel="noopener noreferrer" class="category-name">Wizard School</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/z00l6wjz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">1m 45s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-billy-ws'); return false;">Copier</button>
@@ -992,13 +1150,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ffa?h=Any&x=7dgepx24" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/ffa/run/yw2wggpy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">16m 38s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #5</span>
                             <span class="best-rank">📈 Historique: 🥉 3ème</span>
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ffa-any'); return false;">Copier</button>
@@ -1007,13 +1170,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ffa?h=J-Any&x=zdnvxqkq" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Jap</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/ffa/run/y4njl52m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">16m 32s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #5</span>
                             <span class="best-rank">📈 Historique: 🥈 2ème</span>
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ffa-any-jp'); return false;">Copier</button>
@@ -1022,13 +1190,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ffa?h=Any_Warpless&x=mkepmx26" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Warpless</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/ffa/run/y28pgq5y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">2h 16m 36s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #7</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ffa'); return false;">Copier</button>
@@ -1037,13 +1210,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/noddy_dt?h=Any&x=zdn47mxk" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/noddy_dt/run/z162g17m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">17m 52s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-oui'); return false;">Copier</button>
@@ -1052,13 +1230,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/sma2?h=11_Exit_Goals-Luigi&x=xk90qryk-p856e5ng.jqzg5wkl" target="_blank" rel="noopener noreferrer" class="category-name">11 Exit Goals - Luigi</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/sma2/run/ylj6xqxm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">14m 04s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #30</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥈 2ème</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-sma2-luigi'); return false;">Copier</button>
@@ -1067,13 +1250,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/sma2?h=11_Exit_Goals-Mario&x=xk90qryk-p856e5ng.21g946oq" target="_blank" rel="noopener noreferrer" class="category-name">11 Exit Goals - Mario</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/sma2/run/yd4jlrxy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">13m 14s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #62</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥉 3ème</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-sma2-mario'); return false;">Copier</button>
@@ -1082,13 +1270,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/smw?h=11_Exit-glitchless&x=n2y1y72o-yn2wxjn5.81pk8vl7" target="_blank" rel="noopener noreferrer" class="category-name">11 Exits - Glitchless</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/smw/run/zgov8e0m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">14m 03s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #1259</span>
                             <span class="best-rank">📈 Historique: #1256</span>
+                        </div>
+                        <div class="french-ranks-line">
                             
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-smw-11'); return false;">Copier</button>
@@ -1097,13 +1290,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/magical_taruruuto-kun?h=Any&x=n2yjv9m2" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/magical_taruruuto-kun/run/y6gwdkjm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">17m 44s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 #8</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-talulu'); return false;">Copier</button>
@@ -1112,13 +1310,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/Vertical_Force?h=any-easy&x=vdolrq1d-9l7grzpl.qoxdo82q" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Easy</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/Vertical_Force/run/me2v8l8m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">13m 31s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-vertf-easy'); return false;">Copier</button>
@@ -1127,13 +1330,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/Vertical_Force?h=any-hard&x=vdolrq1d-9l7grzpl.qvv3okwq" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Hard</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/Vertical_Force/run/zg63wvjm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">29m 44s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-vertf-hard'); return false;">Copier</button>
@@ -1142,13 +1350,18 @@
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/Vertical_Force?h=any-normal&x=vdolrq1d-9l7grzpl.13937o31" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Normal</a>
-                        <div class="pb-time-container">
+                        <div class="pb-time-line">
                             <a href="http://www.speedrun.com/Vertical_Force/run/yoev2njz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">19m 09s</a>
+                        </div>
+                        <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
                             
+                        </div>
+                        <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷 : 🥇 1er</span>
                             
                         </div>
+                        
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-vertf-normal'); return false;">Copier</button>
@@ -1172,7 +1385,7 @@
                 </div>
                 <div class="marathon-content">
                     <h3 class="marathon-game-title">The Minish Cap</h3>
-                    <span class="marathon-category">Firerod%</span>
+                    <a href="https://www.speedrun.com/tmcce?h=Firerod&x=z27vw7z2" target="_blank" rel="noopener noreferrer" class="marathon-category">Firerod%</a>
                     
                 <div class="marathon-times">
                     <div class="marathon-time">⏱️ Temps marathon: <strong>34m 46s</strong></div>
@@ -1200,7 +1413,7 @@
                 </div>
                 <div class="marathon-content">
                     <h3 class="marathon-game-title">Talulu le Magicien</h3>
-                    <span class="marathon-category">Any%</span>
+                    <a href="https://www.speedrun.com/magical_taruruuto-kun?h=Any&x=n2yjv9m2" target="_blank" rel="noopener noreferrer" class="marathon-category">Any%</a>
                     
                 <div class="marathon-times">
                     <div class="marathon-time">⏱️ Temps marathon: <strong>20m 07s</strong></div>
@@ -1221,7 +1434,7 @@
     </div>
 
     <footer>
-        <p>Dernière mise à jour: 29/10/2025 à 02:53</p>
+        <p>Dernière mise à jour: 29/10/2025 à 16:06</p>
     </footer>
 
     <script>
