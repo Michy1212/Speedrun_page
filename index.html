@@ -688,6 +688,83 @@
             max-height: 5000px; /* Valeur suffisamment grande */
             opacity: 1;
         }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .modal-close:hover {
+            color: #00a8ff;
+            transform: scale(1.1);
+        }
+
+        .modal-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Style pour les images cliquables */
+        .game-image, .marathon-game-image {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .game-image:hover, .marathon-game-image:hover {
+            transform: scale(1.05);
+        }
+
+        .game-image img, .marathon-game-image img {
+            transition: var(--transition);
+        }
+
+        .game-image:hover img, .marathon-game-image:hover img {
+            opacity: 0.8;
+        }
 
         /* Adaptation responsive */
         @media (max-width: 768px) {
@@ -727,7 +804,7 @@
             </div>
 
             <div id="speedruns" class="tab-content active">
-<section class="category-section"><div class="category-header" style="background: #7c8100;" onclick="toggleCategory('The_Legend_of_Zelda')">The Legend of Zelda</div><div class="category-content expanded" id="The_Legend_of_Zelda"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\2D Zelda Games.png" alt="2D Zelda Games"></div><div class="game-content"><h3 class="game-title">2D Zelda Games</h3><ul class="category-list">
+<section class="category-section"><div class="category-header" style="background: #7c8100;" onclick="toggleCategory('The_Legend_of_Zelda')">The Legend of Zelda</div><div class="category-content expanded" id="The_Legend_of_Zelda"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\2D Zelda Games.png" alt="2D Zelda Games" onclick="openImageModal(this, '2D Zelda Games')"></div><div class="game-content"><h3 class="game-title">2D Zelda Games</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/2dzelda?h=Game_Boy_Color_Trilogy&x=wdm61pok" target="_blank" rel="noopener noreferrer" class="category-name">Game Boy Color Trilogy</a>
@@ -747,7 +824,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-zelda-gbc'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\A Link Between Worlds.png" alt="A Link Between Worlds"></div><div class="game-content"><h3 class="game-title">A Link Between Worlds</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\A Link Between Worlds.png" alt="A Link Between Worlds" onclick="openImageModal(this, 'A Link Between Worlds')"></div><div class="game-content"><h3 class="game-title">A Link Between Worlds</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/albw?h=Any-Normal_Mode-Original&x=zd35vnkn-6njwdjl4.5q84yvkl-dlorykjl.013kv9xq" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Normal Mode - Original</a>
@@ -767,7 +844,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-albw'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\A Link to the Past (Jap).png" alt="A Link to the Past"></div><div class="game-content"><h3 class="game-title">A Link to the Past</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\A Link to the Past (Jap).png" alt="A Link to the Past" onclick="openImageModal(this, 'A Link to the Past')"></div><div class="game-content"><h3 class="game-title">A Link to the Past</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/alttp?h=Major_Glitches-any&x=n2y180m2-68kzoq82.p129ogdl" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Major Glitches</a>
@@ -787,7 +864,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-alttp-mg'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Echoes of Wisdom.png" alt="Echoes of Wisdom"></div><div class="game-content"><h3 class="game-title">Echoes of Wisdom</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Echoes of Wisdom.png" alt="Echoes of Wisdom" onclick="openImageModal(this, 'Echoes of Wisdom')"></div><div class="game-content"><h3 class="game-title">Echoes of Wisdom</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/eow?h=any-unrestricted&x=rkly4wwd-0nwm6or8.qoxrr3gq" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Unrestricted</a>
@@ -807,7 +884,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-eow'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Four Swords (Jap).png" alt="Four Swords"></div><div class="game-content"><h3 class="game-title">Four Swords</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Four Swords (Jap).png" alt="Four Swords" onclick="openImageModal(this, 'Four Swords')"></div><div class="game-content"><h3 class="game-title">Four Swords</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/the_legend_of_zelda_four_swords?h=100&x=jdz050g2" target="_blank" rel="noopener noreferrer" class="category-name">100% - DSi Solo</a>
@@ -867,7 +944,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-fs'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Link's Awakening DX (Jap).png" alt="Link's Awakening DX"></div><div class="game-content"><h3 class="game-title">Link's Awakening DX</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Link's Awakening DX (Jap).png" alt="Link's Awakening DX" onclick="openImageModal(this, 'Link's Awakening DX')"></div><div class="game-content"><h3 class="game-title">Link's Awakening DX</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ladx?h=Any-ACE&x=zdnoo92q-789kkk6l.z195g80q" target="_blank" rel="noopener noreferrer" class="category-name">Any% - ACE</a>
@@ -907,7 +984,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ladx'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Oracle of Ages (Jap).png" alt="Oracle of Ages"></div><div class="game-content"><h3 class="game-title">Oracle of Ages</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Oracle of Ages (Jap).png" alt="Oracle of Ages" onclick="openImageModal(this, 'Oracle of Ages')"></div><div class="game-content"><h3 class="game-title">Oracle of Ages</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ooa?h=Any&x=mkew7xk6" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
@@ -927,7 +1004,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ooa'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Oracle of Seasons (Jap).png" alt="Oracle of Seasons"></div><div class="game-content"><h3 class="game-title">Oracle of Seasons</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Oracle of Seasons (Jap).png" alt="Oracle of Seasons" onclick="openImageModal(this, 'Oracle of Seasons')"></div><div class="game-content"><h3 class="game-title">Oracle of Seasons</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/oos?h=All_Essences&x=7kjvl6gk" target="_blank" rel="noopener noreferrer" class="category-name">All Essences</a>
@@ -947,7 +1024,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-oos'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Phantom Hourglass (Jap).png" alt="Phantom Hourglass"></div><div class="game-content"><h3 class="game-title">Phantom Hourglass</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\Phantom Hourglass (Jap).png" alt="Phantom Hourglass" onclick="openImageModal(this, 'Phantom Hourglass')"></div><div class="game-content"><h3 class="game-title">Phantom Hourglass</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/tlozph?h=Any1-ds-emu&x=jdrqr95k-ylq3wgz8.1py74v81" target="_blank" rel="noopener noreferrer" class="category-name">Any% - DS/Emu</a>
@@ -967,7 +1044,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ph'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\The Minish Cap (Jap).png" alt="The Minish Cap"></div><div class="game-content"><h3 class="game-title">The Minish Cap</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\The Minish Cap (Jap).png" alt="The Minish Cap" onclick="openImageModal(this, 'The Minish Cap')"></div><div class="game-content"><h3 class="game-title">The Minish Cap</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/tmc?h=Any&x=wdmmv4dq" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
@@ -1007,7 +1084,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-tmc-firerod'); return false;">Copier</button>
                 </li>
-            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #a40505;" onclick="toggleCategory('Pokémon')">Pokémon</div><div class="category-content expanded" id="Pokémon"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon  Let's Go, Pikachu.png" alt="Pokémon : Let's Go, Pikachu"></div><div class="game-content"><h3 class="game-title">Pokémon : Let's Go, Pikachu</h3><ul class="category-list">
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #a40505;" onclick="toggleCategory('Pokémon')">Pokémon</div><div class="category-content expanded" id="Pokémon"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon  Let's Go, Pikachu.png" alt="Pokémon : Let's Go, Pikachu" onclick="openImageModal(this, 'Pokémon : Let's Go, Pikachu')"></div><div class="game-content"><h3 class="game-title">Pokémon : Let's Go, Pikachu</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/pkmnletsgo?h=Any_NMS-Pikachu-ENG-switch-1&x=zdn151xk-2lggrm7l.5lm4dmjl-789j375n.jqz5jv8q-e8mgg4x8.q8k7e26q" target="_blank" rel="noopener noreferrer" class="category-name">Any% - NMS</a>
@@ -1047,7 +1124,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-lgp-coop'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon  Saphir Alpha.png" alt="Pokémon : Saphir Alpha"></div><div class="game-content"><h3 class="game-title">Pokémon : Saphir Alpha</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon  Saphir Alpha.png" alt="Pokémon : Saphir Alpha" onclick="openImageModal(this, 'Pokémon : Saphir Alpha')"></div><div class="game-content"><h3 class="game-title">Pokémon : Saphir Alpha</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/pkmnoras?h=Any-Alpha_Sapphire-ENG&x=zd378y2n-r0nwdd8q.pxqkxy19-ylq0zv8r.013xmkx1" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Saphir Alpha - ENG</a>
@@ -1067,7 +1144,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-sa'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon Puzzle Challenge.png" alt="Pokémon Puzzle Challenge"></div><div class="game-content"><h3 class="game-title">Pokémon Puzzle Challenge</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon Puzzle Challenge.png" alt="Pokémon Puzzle Challenge" onclick="openImageModal(this, 'Pokémon Puzzle Challenge')"></div><div class="game-content"><h3 class="game-title">Pokémon Puzzle Challenge</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/pokemon_puzzle_challenge?h=Challenge-Easy-Scroll_Off&x=xd13z18k-e8me5wn6.810069p1-gnxojxnv.5le3nd6q" target="_blank" rel="noopener noreferrer" class="category-name">Challenge - Easy (Scroll Off)</a>
@@ -1087,7 +1164,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ppc'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon Version Rouge & Bleue (US).png" alt="Pokémon Version Rouge & Bleue"></div><div class="game-content"><h3 class="game-title">Pokémon Version Rouge & Bleue</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon Version Rouge & Bleue (US).png" alt="Pokémon Version Rouge & Bleue" onclick="openImageModal(this, 'Pokémon Version Rouge & Bleue')"></div><div class="game-content"><h3 class="game-title">Pokémon Version Rouge & Bleue</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/pkmnrbext?h=Alt_Main_Pokes-porygon&x=mkeqjg9k-38djzw08.1395emd1" target="_blank" rel="noopener noreferrer" class="category-name">Alt Main Pokes - Porygon</a>
@@ -1167,7 +1244,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-red-no-it'); return false;">Copier</button>
                 </li>
-            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #015a01;" onclick="toggleCategory('Luigis_Mansion')">Luigi's Mansion</div><div class="category-content expanded" id="Luigis_Mansion"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #015a01;"><div class="game-image"><img src="images\Luigi's Mansion (Jap).png" alt="Luigi's Mansion"></div><div class="game-content"><h3 class="game-title">Luigi's Mansion</h3><ul class="category-list">
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #015a01;" onclick="toggleCategory('Luigis_Mansion')">Luigi's Mansion</div><div class="category-content expanded" id="Luigis_Mansion"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #015a01;"><div class="game-image"><img src="images\Luigi's Mansion (Jap).png" alt="Luigi's Mansion" onclick="openImageModal(this, 'Luigi's Mansion')"></div><div class="game-content"><h3 class="game-title">Luigi's Mansion</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/lm?h=Any_No_OoB-gcn&x=zdn45nkq-2lgkdp38.qvvoyo7q" target="_blank" rel="noopener noreferrer" class="category-name">Any% (No OoB) - GC</a>
@@ -1187,7 +1264,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-lm'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #015a01;"><div class="game-image"><img src="images\Luigi's Mansion Arcade.png" alt="Luigi's Mansion Arcade"></div><div class="game-content"><h3 class="game-title">Luigi's Mansion Arcade</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #015a01;"><div class="game-image"><img src="images\Luigi's Mansion Arcade.png" alt="Luigi's Mansion Arcade" onclick="openImageModal(this, 'Luigi's Mansion Arcade')"></div><div class="game-content"><h3 class="game-title">Luigi's Mansion Arcade</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/lmarcade?h=All_Levels-1P&x=w20g748k-wl30ejvl.5lmjg40l" target="_blank" rel="noopener noreferrer" class="category-name">All Levels - 1P</a>
@@ -1227,7 +1304,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-lma-1p'); return false;">Copier</button>
                 </li>
-            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #19066f;" onclick="toggleCategory('Autres')">Autres</div><div class="category-content expanded" id="Autres"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Billy the Wizard.png" alt="Billy the Wizard"></div><div class="game-content"><h3 class="game-title">Billy the Wizard</h3><ul class="category-list">
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #19066f;" onclick="toggleCategory('Autres')">Autres</div><div class="category-content expanded" id="Autres"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Billy the Wizard.png" alt="Billy the Wizard" onclick="openImageModal(this, 'Billy the Wizard')"></div><div class="game-content"><h3 class="game-title">Billy the Wizard</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=All_Levels-Wii&x=9d8gp66k-789ky03l.8107xkol" target="_blank" rel="noopener noreferrer" class="category-name">All Levels</a>
@@ -1327,7 +1404,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-billy-ws'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Final Fantasy Adventure (US).png" alt="Final Fantasy Adventure"></div><div class="game-content"><h3 class="game-title">Final Fantasy Adventure</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Final Fantasy Adventure (US).png" alt="Final Fantasy Adventure" onclick="openImageModal(this, 'Final Fantasy Adventure')"></div><div class="game-content"><h3 class="game-title">Final Fantasy Adventure</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ffa?h=Any&x=7dgepx24" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
@@ -1387,7 +1464,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ffa'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Oui-Oui  Une Journée au Pays des Jouets.png" alt="Oui-Oui : Une Journée au Pays des Jouets"></div><div class="game-content"><h3 class="game-title">Oui-Oui : Une Journée au Pays des Jouets</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Oui-Oui  Une Journée au Pays des Jouets.png" alt="Oui-Oui : Une Journée au Pays des Jouets" onclick="openImageModal(this, 'Oui-Oui : Une Journée au Pays des Jouets')"></div><div class="game-content"><h3 class="game-title">Oui-Oui : Une Journée au Pays des Jouets</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/noddy_dt?h=Any&x=zdn47mxk" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
@@ -1407,7 +1484,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-oui'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Super Mario Advance 2.png" alt="Super Mario Advance 2"></div><div class="game-content"><h3 class="game-title">Super Mario Advance 2</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Super Mario Advance 2.png" alt="Super Mario Advance 2" onclick="openImageModal(this, 'Super Mario Advance 2')"></div><div class="game-content"><h3 class="game-title">Super Mario Advance 2</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/sma2?h=11_Exit_Goals-Luigi&x=xk90qryk-p856e5ng.jqzg5wkl" target="_blank" rel="noopener noreferrer" class="category-name">11 Exit Goals - Luigi</a>
@@ -1447,7 +1524,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-sma2-mario'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Super Mario World (Jap).png" alt="Super Mario World"></div><div class="game-content"><h3 class="game-title">Super Mario World</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Super Mario World (Jap).png" alt="Super Mario World" onclick="openImageModal(this, 'Super Mario World')"></div><div class="game-content"><h3 class="game-title">Super Mario World</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/smw?h=11_Exit-glitchless&x=n2y1y72o-yn2wxjn5.81pk8vl7" target="_blank" rel="noopener noreferrer" class="category-name">11 Exits - Glitchless</a>
@@ -1467,7 +1544,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-smw-11'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Talulu le Magicien (Jap).png" alt="Talulu le Magicien"></div><div class="game-content"><h3 class="game-title">Talulu le Magicien</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Talulu le Magicien (Jap).png" alt="Talulu le Magicien" onclick="openImageModal(this, 'Talulu le Magicien')"></div><div class="game-content"><h3 class="game-title">Talulu le Magicien</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/magical_taruruuto-kun?h=Any&x=n2yjv9m2" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
@@ -1487,7 +1564,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-talulu'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Vertical Force (Jap).png" alt="Vertical Force"></div><div class="game-content"><h3 class="game-title">Vertical Force</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Vertical Force (Jap).png" alt="Vertical Force" onclick="openImageModal(this, 'Vertical Force')"></div><div class="game-content"><h3 class="game-title">Vertical Force</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/Vertical_Force?h=any-easy&x=vdolrq1d-9l7grzpl.qoxdo82q" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Easy</a>
@@ -1562,7 +1639,7 @@
             </div>
             <div class="marathon-body">
                 <div class="marathon-game-image">
-                    <img src="images\The Minish Cap (Jap).png" alt="The Minish Cap">
+                    <img src="images\The Minish Cap (Jap).png" alt="The Minish Cap" onclick="openImageModal(this, 'The Minish Cap')">
                 </div>
                 <div class="marathon-content">
                     <h3 class="marathon-game-title">The Minish Cap</h3>
@@ -1590,7 +1667,7 @@
             </div>
             <div class="marathon-body">
                 <div class="marathon-game-image">
-                    <img src="images\Talulu le Magicien (Jap).png" alt="Talulu le Magicien">
+                    <img src="images\Talulu le Magicien (Jap).png" alt="Talulu le Magicien" onclick="openImageModal(this, 'Talulu le Magicien')">
                 </div>
                 <div class="marathon-content">
                     <h3 class="marathon-game-title">Talulu le Magicien</h3>
@@ -1614,8 +1691,15 @@
         </div>
     </div>
 
+    <!-- Modal pour le zoom des images -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
     <footer>
-        <p>Dernière mise à jour: 11/11/2025 à 20:39</p>
+        <p>Dernière mise à jour: 11/11/2025 à 20:54</p>
     </footer>
 
     <script>
@@ -1657,6 +1741,26 @@
             }
         }
 
+        // FONCTIONS POUR LE ZOOM DES IMAGES
+        function openImageModal(imgElement, gameTitle) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const caption = document.getElementById('modalCaption');
+            
+            modal.style.display = 'block';
+            modalImg.src = imgElement.src;
+            caption.textContent = gameTitle;
+            
+            // Empêcher le défilement de la page en arrière-plan
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
         async function copyText(button, text) {
             try {
                 await navigator.clipboard.writeText(text);
@@ -1696,6 +1800,25 @@
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
+            });
+
+            // Gestion du modal d'images
+            const modal = document.getElementById('imageModal');
+            const modalClose = document.querySelector('.modal-close');
+            
+            modalClose.addEventListener('click', closeImageModal);
+            
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeImageModal();
+                }
+            });
+            
+            // Fermer avec la touche Échap
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeImageModal();
+                }
             });
         });
     </script>
