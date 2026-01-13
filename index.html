@@ -25,6 +25,7 @@
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #e0e0e0;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         .container {
@@ -32,6 +33,7 @@
             margin: 0 auto;
         }
 
+        /* HEADER */
         header {
             text-align: center;
             margin-bottom: 2rem;
@@ -50,6 +52,7 @@
         .subtitle {
             color: #888;
             font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
 
         .bot-info {
@@ -70,319 +73,7 @@
             color: #00a8ff;
         }
 
-        .category-section {
-            margin: 3rem 0;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-        }
-
-        .category-section:hover {
-            box-shadow: var(--hover-shadow);
-        }
-
-        .category-header {
-            padding: 1.5rem;
-            color: white;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            padding: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .games-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-        }
-
-        .game-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .game-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
-        }
-
-        .game-image {
-            flex-shrink: 0;
-            width: 80px;
-            height: 120px;
-            border-radius: 8px;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .game-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .game-content {
-            flex: 1;
-        }
-
-        .game-title {
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .category-list {
-            list-style: none;
-        }
-
-        .category-item {
-            margin-bottom: 0.8rem;
-            padding: 0.8rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .category-details {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .category-name {
-            display: block;
-            color: #4dabf7;
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            transition: var(--transition);
-        }
-
-        .category-name:hover {
-            color: #74c0fc;
-        }
-
-        .pb-time-container {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-        }
-
-        .pb-time {
-            padding: 0.2rem 0.5rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: var(--transition);
-            border: 1px solid;
-        }
-
-        .world-rank {
-            padding: 0.2rem 0.5rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            background: rgba(255, 215, 0, 0.2);
-            border: 1px solid rgba(255, 215, 0, 0.5);
-            color: #ffd700;
-        }
-
-        .best-rank {
-            padding: 0.2rem 0.5rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            background: rgba(50, 205, 50, 0.2);
-            border: 1px solid rgba(50, 205, 50, 0.5);
-            color: #32cd32;
-        }
-
-        /* Style pour les autres joueurs */
-       .other-players {
-            margin-top: 0.3rem;
-            font-size: 0.8rem;
-            color: #aaa;
-            font-style: italic;
-        }
-
-        .player-badge {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: var(--transition);
-            border: 1px solid;
-            background: rgba(147, 51, 234, 0.2);
-            border-color: rgba(147, 51, 234, 0.5);
-            color: #d8b4fe;
-            margin: 0.1rem 0.2rem;
-        }
-
-        .player-badge:hover {
-            background: rgba(147, 51, 234, 0.4);
-            color: #ffffff;
-            text-decoration: none;
-            transform: translateY(-1px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .player-badge::after {
-            content: " 🔗";
-            font-size: 0.7rem;
-            opacity: 0.7;
-        }
-
-        .players-container {
-            display: inline;
-        }
-
-        .copy-link {
-            background: transparent;
-            color: #e0e0e0;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition);
-            border: 1px solid #666;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            white-space: nowrap;
-        }
-
-        .copy-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #00a8ff;
-            color: #00a8ff;
-        }
-
-        .copy-link::before {
-            content: "🤖";
-        }
-
-        /* Animation pour la copie */
-        @keyframes copyFlash {
-            0% { border-color: #666; }
-            50% { border-color: #2f9e44; }
-            100% { border-color: #666; }
-        }
-
-        .copy-flash {
-            animation: copyFlash 0.5s ease;
-        }
-
-        /* Tooltip pour le bouton copie */
-        .copy-link {
-            position: relative;
-        }
-
-        .copy-link::after {
-            content: "Copier pour le bot Pulseman";
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #333;
-            color: white;
-            padding: 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-            z-index: 10;
-        }
-
-        .copy-link:hover::after {
-            opacity: 1;
-        }
-
-        /* Scrollbar personnalisée */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.5);
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            color: #888;
-            border-top: 1px solid #444;
-        }
-
-        /* STYLES POUR LES CLASSEMENTS FRANÇAIS - MÊME STYLE QUE MONDIAL */
-        .french-rank {
-            padding: 0.2rem 0.5rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            background: rgba(0, 100, 200, 0.2);
-            border: 1px solid rgba(0, 100, 200, 0.5);
-            color: #4dabf7;
-        }
-
-        .best-french-rank {
-            padding: 0.2rem 0.5rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            background: rgba(0, 150, 200, 0.2);
-            border: 1px solid rgba(0, 150, 200, 0.5);
-            color: #66d9e8;
-        }
-
-        .estimate-indicator {
-            padding: 0.2rem 0.5rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            background: rgba(200, 150, 0, 0.2);
-            border: 1px solid rgba(200, 150, 0, 0.5);
-            color: #ffd43b;
-            cursor: help;
-        }
-        
+        /* TABS */
         .tabs-container {
             margin: 2rem auto;
             max-width: 1200px;
@@ -395,6 +86,7 @@
             padding: 0.5rem;
             margin-bottom: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 0.5rem;
         }
 
         .tab {
@@ -429,11 +121,439 @@
             display: block;
         }
 
-        /* Styles spécifiques aux runs marathon */
+        /* CATEGORY SECTIONS */
+        .category-section {
+            margin: 3rem 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .category-section:hover {
+            box-shadow: var(--hover-shadow);
+        }
+
+        .category-header {
+            padding: 1rem 1.5rem 1rem 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+            min-height: 90px;
+        }
+
+        .category-header:hover {
+            opacity: 0.9;
+        }
+
+        .category-header::after {
+            content: "▼";
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .category-header.collapsed::after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+
+        .category-header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            height: 100%;
+            padding: 0.5rem 0;
+            width: 100%;
+        }
+
+        .category-image-wrapper {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .category-header:hover .category-image-wrapper {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-header-image {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            padding: 5px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .category-header-icon {
+            font-size: 2.5rem;
+            opacity: 0.9;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        .category-title-text {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.5px;
+            flex: 1;
+        }
+
+        .category-content {
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            overflow: hidden;
+        }
+
+        .category-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .category-content.expanded {
+            max-height: 5000px;
+            opacity: 1;
+        }
+
+        /* GAMES GRID */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        /* GAME CARDS */
+        .game-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid transparent;
+        }
+
+        .game-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .game-image {
+            flex-shrink: 0;
+            width: 80px;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .game-image:hover {
+            transform: scale(1.05);
+        }
+
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .game-image:hover img {
+            opacity: 0.8;
+        }
+
+        .no-image {
+            font-size: 2rem;
+            opacity: 0.5;
+        }
+
+        .game-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .game-title {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* CATEGORY LIST */
+        .category-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .category-item {
+            margin-bottom: 0.8rem;
+            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .category-details {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .category-name {
+            display: block;
+            color: #4dabf7;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .category-name:hover {
+            color: #74c0fc;
+            text-decoration: underline;
+        }
+
+        /* TIMES AND RANKS */
+        .pb-time-line,
+        .world-ranks-line,
+        .french-ranks-line {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .pb-time {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid;
+            display: inline-block;
+        }
+
+        .world-rank {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            color: #ffd700;
+            display: inline-block;
+        }
+
+        .best-rank {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            background: rgba(50, 205, 50, 0.2);
+            border: 1px solid rgba(50, 205, 50, 0.5);
+            color: #32cd32;
+            display: inline-block;
+        }
+
+        .french-rank {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            background: rgba(0, 100, 200, 0.2);
+            border: 1px solid rgba(0, 100, 200, 0.5);
+            color: #4dabf7;
+            display: inline-block;
+        }
+
+        .best-french-rank {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            background: rgba(0, 150, 200, 0.2);
+            border: 1px solid rgba(0, 150, 200, 0.5);
+            color: #66d9e8;
+            display: inline-block;
+        }
+
+        .estimate-indicator {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            background: rgba(200, 150, 0, 0.2);
+            border: 1px solid rgba(200, 150, 0, 0.5);
+            color: #ffd43b;
+            cursor: help;
+            display: inline-block;
+        }
+
+        /* OTHER PLAYERS */
+        .other-players {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .players-container {
+            display: inline;
+        }
+
+        .player-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid;
+            background: rgba(147, 51, 234, 0.2);
+            border-color: rgba(147, 51, 234, 0.5);
+            color: #d8b4fe;
+            margin: 0.1rem 0.2rem;
+        }
+
+        .player-badge:hover {
+            background: rgba(147, 51, 234, 0.4);
+            color: #ffffff;
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .player-badge::after {
+            content: " 🔗";
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
+        /* UNOFFICIAL PB */
+        .unofficial-pb {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 193, 7, 0.15);
+            border: 1px solid rgba(255, 193, 7, 0.4);
+            border-radius: 6px;
+            color: #ffc107;
+            font-size: 0.9rem;
+            border-left: 4px solid #ffc107;
+        }
+
+        /* COPY BUTTON */
+        .copy-link {
+            background: transparent;
+            color: #e0e0e0;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid #666;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            white-space: nowrap;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .copy-link::before {
+            content: "🤖";
+        }
+
+        .copy-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00a8ff;
+            color: #00a8ff;
+        }
+
+        .copy-link::after {
+            content: "Copier pour le bot Pulseman";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 10;
+            margin-bottom: 5px;
+        }
+
+        .copy-link:hover::after {
+            opacity: 1;
+        }
+
+        @keyframes copyFlash {
+            0% { border-color: #666; }
+            50% { border-color: #2f9e44; }
+            100% { border-color: #666; }
+        }
+
+        .copy-flash {
+            animation: copyFlash 0.5s ease;
+        }
+
+        /* MARATHON CARDS */
         .marathon-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: var(--border-radius);
-            padding: 0;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
@@ -508,16 +628,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+        }
+
+        .marathon-game-image:hover {
+            transform: scale(1.05);
         }
 
         .marathon-game-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .marathon-game-image:hover img {
+            opacity: 0.8;
         }
 
         .marathon-content {
             flex: 1;
+            min-width: 0;
         }
 
         .marathon-game-title {
@@ -532,6 +663,33 @@
             font-weight: 600;
             margin-bottom: 1rem;
             display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .marathon-category:hover {
+            color: #74c0fc;
+            text-decoration: underline;
+        }
+
+        .marathon-times {
+            margin: 1rem 0;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #00a8ff;
+        }
+
+        .marathon-time,
+        .pb-at-time {
+            margin: 0.3rem 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .marathon-time strong,
+        .pb-at-time strong {
+            color: #4dabf7;
         }
 
         .marathon-links {
@@ -586,109 +744,8 @@
         .marathon-link.debrief::before {
             content: "📊";
         }
-        
-        .marathon-times {
-            margin: 1rem 0;
-            padding: 0.8rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            border-left: 4px solid #00a8ff;
-        }
 
-        .marathon-time, .pb-at-time {
-            margin: 0.3rem 0;
-            font-size: 0.9rem;
-            color: #e0e0e0;
-        }
-
-        .marathon-time strong, .pb-at-time strong {
-            color: #4dabf7;
-        }
-        
-        .pb-time-line {
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-        }
-
-        .world-ranks-line, .french-ranks-line {
-            margin: 0.3rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-        }
-
-        .unofficial-pb {
-            margin: 0.5rem 0;
-            padding: 0.5rem;
-            background: rgba(255, 193, 7, 0.15);
-            border: 1px solid rgba(255, 193, 7, 0.4);
-            border-radius: 6px;
-            color: #ffc107;
-            font-size: 0.9rem;
-            border-left: 4px solid #ffc107;
-        }
-
-        /* Style pour les liens de catégorie marathon */
-        .marathon-category {
-            color: #4dabf7;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: block;
-            text-decoration: none;
-            transition: var(--transition);
-            padding: 0.2rem 0;
-        }
-
-        .marathon-category:hover {
-            color: #74c0fc;
-            text-decoration: underline;
-        }
-        
-        .category-header {
-            cursor: pointer;
-            user-select: none;
-            position: relative;
-            padding-right: 3rem;
-            transition: var(--transition);
-        }
-
-        .category-header:hover {
-            opacity: 0.9;
-        }
-
-        .category-header::after {
-            content: "▼";
-            position: absolute;
-            right: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .category-header.collapsed::after {
-            transform: translateY(-50%) rotate(-90deg);
-        }
-
-        .category-content {
-            transition: max-height 0.3s ease, opacity 0.3s ease;
-            overflow: hidden;
-        }
-
-        .category-content.collapsed {
-            max-height: 0;
-            opacity: 0;
-        }
-
-        .category-content.expanded {
-            max-height: 5000px; /* Valeur suffisamment grande */
-            opacity: 1;
-        }
-        
+        /* MODAL */
         .modal {
             display: none;
             position: fixed;
@@ -743,36 +800,92 @@
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
         }
 
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            color: #888;
+            border-top: 1px solid #444;
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ANIMATIONS */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        /* Style pour les images cliquables */
-        .game-image, .marathon-game-image {
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .game-image:hover, .marathon-game-image:hover {
-            transform: scale(1.05);
-        }
-
-        .game-image img, .marathon-game-image img {
-            transition: var(--transition);
-        }
-
-        .game-image:hover img, .marathon-game-image:hover img {
-            opacity: 0.8;
-        }
-
-        /* Adaptation responsive */
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
-            .marathon-body {
-                flex-direction: column;
-                text-align: center;
+            .games-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+                gap: 1rem;
             }
             
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .category-header {
+                padding: 0.8rem 2.5rem 0.8rem 1rem;
+                min-height: 70px;
+            }
+            
+            .category-header-content {
+                gap: 1rem;
+            }
+            
+            .category-image-wrapper {
+                width: 55px;
+                height: 55px;
+                min-width: 55px;
+                border-radius: 8px;
+            }
+            
+            .category-header-image {
+                width: 45px;
+                height: 45px;
+                padding: 4px;
+            }
+            
+            .category-header-icon {
+                font-size: 1.8rem;
+            }
+            
+            .category-title-text {
+                font-size: 1.5rem;
+            }
+            
+            .category-header::after {
+                right: 1rem;
+                font-size: 1.2rem;
+            }
+            
+            .game-card,
+            .marathon-body {
+                flex-direction: column;
+            }
+            
+            .game-image,
             .marathon-game-image {
                 align-self: center;
             }
@@ -781,9 +894,63 @@
                 justify-content: center;
             }
             
-            .tabs {
+            .category-item {
                 flex-direction: column;
+                align-items: flex-start;
             }
+            
+            .copy-link {
+                align-self: flex-end;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .category-header-content {
+                gap: 0.8rem;
+            }
+            
+            .category-image-wrapper {
+                width: 45px;
+                height: 45px;
+                min-width: 45px;
+                border-radius: 6px;
+            }
+            
+            .category-header-image {
+                width: 35px;
+                height: 35px;
+                padding: 3px;
+            }
+            
+            .category-header-icon {
+                font-size: 1.5rem;
+            }
+            
+            .category-title-text {
+                font-size: 1.2rem;
+            }
+            
+            .game-card {
+                padding: 1rem;
+            }
+            
+            .game-title {
+                font-size: 1.1rem;
+            }
+            
+            .pb-time,
+            .world-rank,
+            .best-rank,
+            .french-rank,
+            .best-french-rank {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -804,7 +971,7 @@
             </div>
 
             <div id="speedruns" class="tab-content active">
-<section class="category-section"><div class="category-header" style="background: #7c8100;" onclick="toggleCategory('The_Legend_of_Zelda')">The Legend of Zelda</div><div class="category-content expanded" id="The_Legend_of_Zelda"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\2D Zelda Games.png" alt="2D Zelda Games" onclick="openImageModal(this, '2D Zelda Games')"></div><div class="game-content"><h3 class="game-title">2D Zelda Games</h3><ul class="category-list">
+<section class="category-section"><div class="category-header" style="background: #7c8100;" onclick="toggleCategory('The_Legend_of_Zelda')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/the_legend_of_zelda.png" alt="The Legend of Zelda" class="category-header-image"></div></div><h2 class="category-title-text">The Legend of Zelda</h2></div></div><div class="category-content expanded" id="The_Legend_of_Zelda"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #7c8100;"><div class="game-image"><img src="images\2D Zelda Games.png" alt="2D Zelda Games" onclick="openImageModal(this, '2D Zelda Games')"></div><div class="game-content"><h3 class="game-title">2D Zelda Games</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/2dzelda?h=Game_Boy_Color_Trilogy&x=wdm61pok" target="_blank" rel="noopener noreferrer" class="category-name">Game Boy Color Trilogy</a>
@@ -992,7 +1159,7 @@
                             <a href="http://www.speedrun.com/oot/run/zg92k9jm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7c8100; border-color: #f6ff1b; color: #ffffff;">6m 48s</a>
                         </div>
                         <div class="world-ranks-line">
-                            <span class="world-rank">🌍 #162</span>
+                            <span class="world-rank">🌍 #161</span>
                             
                         </div>
                         <div class="french-ranks-line">
@@ -1124,7 +1291,7 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-tmc-firerod'); return false;">Copier</button>
                 </li>
-            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #a40505;" onclick="toggleCategory('Pokémon')">Pokémon</div><div class="category-content expanded" id="Pokémon"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon  Let's Go, Pikachu.png" alt="Pokémon : Let's Go, Pikachu" onclick="openImageModal(this, 'Pokémon : Let's Go, Pikachu')"></div><div class="game-content"><h3 class="game-title">Pokémon : Let's Go, Pikachu</h3><ul class="category-list">
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #a40505;" onclick="toggleCategory('Pokémon')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/pokémon.png" alt="Pokémon" class="category-header-image"></div></div><h2 class="category-title-text">Pokémon</h2></div></div><div class="category-content expanded" id="Pokémon"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #a40505;"><div class="game-image"><img src="images\Pokémon  Let's Go, Pikachu.png" alt="Pokémon : Let's Go, Pikachu" onclick="openImageModal(this, 'Pokémon : Let's Go, Pikachu')"></div><div class="game-content"><h3 class="game-title">Pokémon : Let's Go, Pikachu</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/pkmnletsgo?h=Any_NMS-Pikachu-ENG-switch-1&x=zdn151xk-2lggrm7l.5lm4dmjl-789j375n.jqz5jv8q-e8mgg4x8.q8k7e26q" target="_blank" rel="noopener noreferrer" class="category-name">Any% - NMS</a>
@@ -1212,8 +1379,8 @@
                             <a href="http://www.speedrun.com/pkmnrbext/run/mr52q6dy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">3h 43m 09s</a>
                         </div>
                         <div class="world-ranks-line">
-                            <span class="world-rank">🌍 🥇 1er</span>
-                            
+                            <span class="world-rank">🌍 🥈 2ème</span>
+                            <span class="best-rank">📈 Historique 🌍: 🥇 1er</span>
                         </div>
                         <div class="french-ranks-line">
                             <span class="french-rank">🇫🇷  🥇 1er</span>
@@ -1309,22 +1476,22 @@
                     <div class="category-details">
                         <a href="https://www.speedrun.com/pkmnrbext?h=Any_No_Select_Glitch_RedGreen_JPN&x=wkp3p9j2" target="_blank" rel="noopener noreferrer" class="category-name">Any% No Select Glitch (Red/Green, JPN)</a>
                         <div class="pb-time-line">
-                            
+                            <a href="http://www.speedrun.com/pkmnrbext/run/z56l1pjy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40505; border-color: #f94848; color: #ffffff;">8m 57s</a>
                         </div>
                         <div class="world-ranks-line">
-                            
+                            <span class="world-rank">🌍 🥉 3ème</span>
                             
                         </div>
                         <div class="french-ranks-line">
-                            
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
                             
                         </div>
                         
-                        <div class="unofficial-pb">⏱️ Temps non officialisé: <strong>8min 57s</strong></div>
+                        
                     </div>
-                    
+                    <button class="copy-link" onclick="copyText(this, '!pb-green-no-select-glitch'); return false;">Copier</button>
                 </li>
-            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #015a01;" onclick="toggleCategory('Luigis_Mansion')">Luigi's Mansion</div><div class="category-content expanded" id="Luigis_Mansion"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #015a01;"><div class="game-image"><img src="images\Luigi's Mansion (Jap).png" alt="Luigi's Mansion" onclick="openImageModal(this, 'Luigi's Mansion')"></div><div class="game-content"><h3 class="game-title">Luigi's Mansion</h3><ul class="category-list">
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #015a01;" onclick="toggleCategory('Luigis_Mansion')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/luigis_mansion.png" alt="Luigi's Mansion" class="category-header-image"></div></div><h2 class="category-title-text">Luigi's Mansion</h2></div></div><div class="category-content expanded" id="Luigis_Mansion"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #015a01;"><div class="game-image"><img src="images\Luigi's Mansion (Jap).png" alt="Luigi's Mansion" onclick="openImageModal(this, 'Luigi's Mansion')"></div><div class="game-content"><h3 class="game-title">Luigi's Mansion</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/lm?h=Any_No_OoB-gcn&x=zdn45nkq-2lgkdp38.qvvoyo7q" target="_blank" rel="noopener noreferrer" class="category-name">Any% (No OoB) - GC</a>
@@ -1404,112 +1571,12 @@
                     </div>
                     
                 </li>
-            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #19066f;" onclick="toggleCategory('Autres')">Autres</div><div class="category-content expanded" id="Autres"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Billy the Wizard.png" alt="Billy the Wizard" onclick="openImageModal(this, 'Billy the Wizard')"></div><div class="game-content"><h3 class="game-title">Billy the Wizard</h3><ul class="category-list">
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=All_Levels-Wii&x=9d8gp66k-789ky03l.8107xkol" target="_blank" rel="noopener noreferrer" class="category-name">All Levels</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/yoed941z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">38m 41s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 🥇 1er</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥇 1er</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-billy'); return false;">Copier</button>
-                </li>
-            
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Broomstick_Grand_Prix-Wii&x=w20y0w5k-p8591x0n.jqz40w2l" target="_blank" rel="noopener noreferrer" class="category-name">Broomstick Grand Prix</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/mkwd743m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">10m 22s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 🥇 1er</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥇 1er</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-billy-bgp'); return false;">Copier</button>
-                </li>
-            
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Green_Dragon_Attack-Wii&x=rkljwqnd-ylpv4o6l.21dd28p1" target="_blank" rel="noopener noreferrer" class="category-name">Green Dragon Attack</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/me2198qm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">15m 08s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 🥇 1er</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥇 1er</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-billy-gda'); return false;">Copier</button>
-                </li>
-            
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Spell_Book_Chaos-Wii&x=ndx1ymr2-onv6me78.jqz4022l" target="_blank" rel="noopener noreferrer" class="category-name">Spell Book Chaos</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/ylj1o42m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">9m 34s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 🥇 1er</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥇 1er</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-billy-sbc'); return false;">Copier</button>
-                </li>
-            
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Wizard_School&x=wdm80wo2" target="_blank" rel="noopener noreferrer" class="category-name">Wizard School</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/z00l6wjz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">1m 45s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 🥇 1er</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥇 1er</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-billy-ws'); return false;">Copier</button>
-                </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Déjà Vu (US).png" alt="Déjà Vu" onclick="openImageModal(this, 'Déjà Vu')"></div><div class="game-content"><h3 class="game-title">Déjà Vu</h3><ul class="category-list">
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #b3b3b3;" onclick="toggleCategory('NES_Divers')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/NES Divers.png" alt="NES Divers" class="category-header-image"></div></div><h2 class="category-title-text">NES Divers</h2></div></div><div class="category-content expanded" id="NES_Divers"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #b3b3b3;"><div class="game-image"><img src="images\Déjà Vu (US).png" alt="Déjà Vu" onclick="openImageModal(this, 'Déjà Vu')"></div><div class="game-content"><h3 class="game-title">Déjà Vu</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/dejavu?h=Any1&x=5dwjo35k" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
                         <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/dejavu/run/yl5xdr2z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">14m 52s</a>
+                            <a href="http://www.speedrun.com/dejavu/run/yl5xdr2z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #b3b3b3; border-color: #ffffff; color: #000000;">14m 52s</a>
                         </div>
                         <div class="world-ranks-line">
                             <span class="world-rank">🌍 #21</span>
@@ -1524,12 +1591,32 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-deja-vu'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Final Fantasy Adventure (US).png" alt="Final Fantasy Adventure" onclick="openImageModal(this, 'Final Fantasy Adventure')"></div><div class="game-content"><h3 class="game-title">Final Fantasy Adventure</h3><ul class="category-list">
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #cfcfcf;" onclick="toggleCategory('Super_Nintendo_Divers')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/Super Nintendo Divers.png" alt="Super Nintendo Divers" class="category-header-image"></div></div><h2 class="category-title-text">Super Nintendo Divers</h2></div></div><div class="category-content expanded" id="Super_Nintendo_Divers"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #cfcfcf;"><div class="game-image"><img src="images\Super Mario World (Jap).png" alt="Super Mario World" onclick="openImageModal(this, 'Super Mario World')"></div><div class="game-content"><h3 class="game-title">Super Mario World</h3><ul class="category-list">
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/smw?h=11_Exit-glitchless&x=n2y1y72o-yn2wxjn5.81pk8vl7" target="_blank" rel="noopener noreferrer" class="category-name">11 Exits - Glitchless</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/smw/run/zgov8e0m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #cfcfcf; border-color: #ffffff; color: #000000;">14m 03s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 #1276</span>
+                            <span class="best-rank">📈 Historique 🌍: #1256</span>
+                        </div>
+                        <div class="french-ranks-line">
+                            
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-smw-11'); return false;">Copier</button>
+                </li>
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #9fa58b;" onclick="toggleCategory('Game_Boy_Divers')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/Game Boy Divers.png" alt="Game Boy Divers" class="category-header-image"></div></div><h2 class="category-title-text">Game Boy Divers</h2></div></div><div class="category-content expanded" id="Game_Boy_Divers"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #9fa58b;"><div class="game-image"><img src="images\Final Fantasy Adventure (US).png" alt="Final Fantasy Adventure" onclick="openImageModal(this, 'Final Fantasy Adventure')"></div><div class="game-content"><h3 class="game-title">Final Fantasy Adventure</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ffa?h=Any&x=7dgepx24" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
                         <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/ffa/run/yw2wggpy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">16m 38s</a>
+                            <a href="http://www.speedrun.com/ffa/run/yw2wggpy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #9fa58b; border-color: #e6e7e1; color: #000000;">16m 38s</a>
                         </div>
                         <div class="world-ranks-line">
                             <span class="world-rank">🌍 #6</span>
@@ -1549,7 +1636,7 @@
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ffa?h=J-Any&x=zdnvxqkq" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Jap</a>
                         <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/ffa/run/y4njl52m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">16m 32s</a>
+                            <a href="http://www.speedrun.com/ffa/run/y4njl52m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #9fa58b; border-color: #e6e7e1; color: #000000;">16m 32s</a>
                         </div>
                         <div class="world-ranks-line">
                             <span class="world-rank">🌍 #5</span>
@@ -1569,7 +1656,7 @@
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/ffa?h=Any_Warpless&x=mkepmx26" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Warpless</a>
                         <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/ffa/run/y28pgq5y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">2h 16m 36s</a>
+                            <a href="http://www.speedrun.com/ffa/run/y28pgq5y" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #9fa58b; border-color: #e6e7e1; color: #000000;">2h 16m 36s</a>
                         </div>
                         <div class="world-ranks-line">
                             <span class="world-rank">🌍 #7</span>
@@ -1584,132 +1671,12 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-ffa'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Oui-Oui  Une Journée au Pays des Jouets.png" alt="Oui-Oui : Une Journée au Pays des Jouets" onclick="openImageModal(this, 'Oui-Oui : Une Journée au Pays des Jouets')"></div><div class="game-content"><h3 class="game-title">Oui-Oui : Une Journée au Pays des Jouets</h3><ul class="category-list">
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/noddy_dt?h=Any&x=zdn47mxk" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/noddy_dt/run/z162g17m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">17m 52s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 🥇 1er</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥇 1er</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-oui'); return false;">Copier</button>
-                </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Super Mario Advance 2.png" alt="Super Mario Advance 2" onclick="openImageModal(this, 'Super Mario Advance 2')"></div><div class="game-content"><h3 class="game-title">Super Mario Advance 2</h3><ul class="category-list">
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/sma2?h=11_Exit_Goals-Luigi&x=xk90qryk-p856e5ng.jqzg5wkl" target="_blank" rel="noopener noreferrer" class="category-name">11 Exit Goals - Luigi</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/sma2/run/ylj6xqxm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">14m 04s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 #30</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥈 2ème</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-sma2-luigi'); return false;">Copier</button>
-                </li>
-            
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/sma2?h=11_Exit_Goals-Mario&x=xk90qryk-p856e5ng.21g946oq" target="_blank" rel="noopener noreferrer" class="category-name">11 Exit Goals - Mario</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/sma2/run/yd4jlrxy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">13m 14s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 #62</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥉 3ème</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-sma2-mario'); return false;">Copier</button>
-                </li>
-            
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/sma2?h=No_Starworld-Luigi&x=z27gnrg2-p856e5ng.jqzg5wkl" target="_blank" rel="noopener noreferrer" class="category-name">No Starworld - Luigi</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/sma2/run/y9wx79vz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">58m 31s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 #9</span>
-                            
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥇 1er</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-sma2-luigi-nosw'); return false;">Copier</button>
-                </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Super Mario World (Jap).png" alt="Super Mario World" onclick="openImageModal(this, 'Super Mario World')"></div><div class="game-content"><h3 class="game-title">Super Mario World</h3><ul class="category-list">
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/smw?h=11_Exit-glitchless&x=n2y1y72o-yn2wxjn5.81pk8vl7" target="_blank" rel="noopener noreferrer" class="category-name">11 Exits - Glitchless</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/smw/run/zgov8e0m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">14m 03s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 #1276</span>
-                            <span class="best-rank">📈 Historique 🌍: #1256</span>
-                        </div>
-                        <div class="french-ranks-line">
-                            
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-smw-11'); return false;">Copier</button>
-                </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Talulu le Magicien (Jap).png" alt="Talulu le Magicien" onclick="openImageModal(this, 'Talulu le Magicien')"></div><div class="game-content"><h3 class="game-title">Talulu le Magicien</h3><ul class="category-list">
-                <li class="category-item">
-                    <div class="category-details">
-                        <a href="https://www.speedrun.com/fr-FR/magical_taruruuto-kun?h=Any&x=n2yjv9m2" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
-                        <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/magical_taruruuto-kun/run/y6gwdkjm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">17m 44s</a>
-                        </div>
-                        <div class="world-ranks-line">
-                            <span class="world-rank">🌍 #11</span>
-                            <span class="best-rank">📈 Historique 🌍: #8</span>
-                        </div>
-                        <div class="french-ranks-line">
-                            <span class="french-rank">🇫🇷  🥇 1er</span>
-                            
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="copy-link" onclick="copyText(this, '!pb-talulu'); return false;">Copier</button>
-                </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Tamagotchi.png" alt="Tamagotchi" onclick="openImageModal(this, 'Tamagotchi')"></div><div class="game-content"><h3 class="game-title">Tamagotchi</h3><ul class="category-list">
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #9fa58b;"><div class="game-image"><img src="images\Tamagotchi.png" alt="Tamagotchi" onclick="openImageModal(this, 'Tamagotchi')"></div><div class="game-content"><h3 class="game-title">Tamagotchi</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/tamagotchi_gb?h=Death&x=82410mw2" target="_blank" rel="noopener noreferrer" class="category-name">Death%</a>
                         <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/tamagotchi_gb/run/zq51pp9z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">1m 48s</a>
+                            <a href="http://www.speedrun.com/tamagotchi_gb/run/zq51pp9z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #9fa58b; border-color: #e6e7e1; color: #000000;">1m 48s</a>
                         </div>
                         <div class="world-ranks-line">
                             <span class="world-rank">🌍 #5</span>
@@ -1724,12 +1691,12 @@
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-tamagotchi'); return false;">Copier</button>
                 </li>
-            </ul></div></div><div class="game-card" style="border-left: 4px solid #19066f;"><div class="game-image"><img src="images\Vertical Force (Jap).png" alt="Vertical Force" onclick="openImageModal(this, 'Vertical Force')"></div><div class="game-content"><h3 class="game-title">Vertical Force</h3><ul class="category-list">
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #a40000;" onclick="toggleCategory('Virtual_Boy_Divers')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/Virtual Boy Divers.png" alt="Virtual Boy Divers" class="category-header-image"></div></div><h2 class="category-title-text">Virtual Boy Divers</h2></div></div><div class="category-content expanded" id="Virtual_Boy_Divers"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #a40000;"><div class="game-image"><img src="images\Vertical Force (Jap).png" alt="Vertical Force" onclick="openImageModal(this, 'Vertical Force')"></div><div class="game-content"><h3 class="game-title">Vertical Force</h3><ul class="category-list">
                 <li class="category-item">
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/Vertical_Force?h=any-easy&x=vdolrq1d-9l7grzpl.qoxdo82q" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Easy</a>
                         <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/Vertical_Force/run/me2v8l8m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">13m 31s</a>
+                            <a href="http://www.speedrun.com/Vertical_Force/run/me2v8l8m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40000; border-color: #ff3e3e; color: #ffffff;">13m 31s</a>
                         </div>
                         <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
@@ -1749,7 +1716,7 @@
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/Vertical_Force?h=any-hard&x=vdolrq1d-9l7grzpl.qvv3okwq" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Hard</a>
                         <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/Vertical_Force/run/zg63wvjm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">29m 44s</a>
+                            <a href="http://www.speedrun.com/Vertical_Force/run/zg63wvjm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40000; border-color: #ff3e3e; color: #ffffff;">29m 44s</a>
                         </div>
                         <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
@@ -1769,7 +1736,7 @@
                     <div class="category-details">
                         <a href="https://www.speedrun.com/fr-FR/Vertical_Force?h=any-normal&x=vdolrq1d-9l7grzpl.13937o31" target="_blank" rel="noopener noreferrer" class="category-name">Any% - Normal</a>
                         <div class="pb-time-line">
-                            <a href="http://www.speedrun.com/Vertical_Force/run/yoev2njz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #19066f; border-color: #421bf2; color: #ffffff;">19m 09s</a>
+                            <a href="http://www.speedrun.com/Vertical_Force/run/yoev2njz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #a40000; border-color: #ff3e3e; color: #ffffff;">19m 09s</a>
                         </div>
                         <div class="world-ranks-line">
                             <span class="world-rank">🌍 🥇 1er</span>
@@ -1783,6 +1750,206 @@
                         
                     </div>
                     <button class="copy-link" onclick="copyText(this, '!pb-vertf-normal'); return false;">Copier</button>
+                </li>
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #5a4a7a;" onclick="toggleCategory('Game_Boy_Advance_Divers')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/Game Boy Advance Divers.png" alt="Game Boy Advance Divers" class="category-header-image"></div></div><h2 class="category-title-text">Game Boy Advance Divers</h2></div></div><div class="category-content expanded" id="Game_Boy_Advance_Divers"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #5a4a7a;"><div class="game-image"><img src="images\Oui-Oui  Une Journée au Pays des Jouets.png" alt="Oui-Oui : Une Journée au Pays des Jouets" onclick="openImageModal(this, 'Oui-Oui : Une Journée au Pays des Jouets')"></div><div class="game-content"><h3 class="game-title">Oui-Oui : Une Journée au Pays des Jouets</h3><ul class="category-list">
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/noddy_dt?h=Any&x=zdn47mxk" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/noddy_dt/run/z162g17m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #5a4a7a; border-color: #a79ac2; color: #ffffff;">17m 52s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 🥇 1er</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-oui'); return false;">Copier</button>
+                </li>
+            </ul></div></div><div class="game-card" style="border-left: 4px solid #5a4a7a;"><div class="game-image"><img src="images\Super Mario Advance 2.png" alt="Super Mario Advance 2" onclick="openImageModal(this, 'Super Mario Advance 2')"></div><div class="game-content"><h3 class="game-title">Super Mario Advance 2</h3><ul class="category-list">
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/sma2?h=11_Exit_Goals-Luigi&x=xk90qryk-p856e5ng.jqzg5wkl" target="_blank" rel="noopener noreferrer" class="category-name">11 Exit Goals - Luigi</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/sma2/run/ylj6xqxm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #5a4a7a; border-color: #a79ac2; color: #ffffff;">14m 04s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 #30</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥈 2ème</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-sma2-luigi'); return false;">Copier</button>
+                </li>
+            
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/sma2?h=11_Exit_Goals-Mario&x=xk90qryk-p856e5ng.21g946oq" target="_blank" rel="noopener noreferrer" class="category-name">11 Exit Goals - Mario</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/sma2/run/yd4jlrxy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #5a4a7a; border-color: #a79ac2; color: #ffffff;">13m 14s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 #62</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥉 3ème</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-sma2-mario'); return false;">Copier</button>
+                </li>
+            
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/sma2?h=No_Starworld-Luigi&x=z27gnrg2-p856e5ng.jqzg5wkl" target="_blank" rel="noopener noreferrer" class="category-name">No Starworld - Luigi</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/sma2/run/y9wx79vz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #5a4a7a; border-color: #a79ac2; color: #ffffff;">58m 31s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 #9</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-sma2-luigi-nosw'); return false;">Copier</button>
+                </li>
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #e6eef2;" onclick="toggleCategory('Wii_Divers')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/Wii Divers.png" alt="Wii Divers" class="category-header-image"></div></div><h2 class="category-title-text">Wii Divers</h2></div></div><div class="category-content expanded" id="Wii_Divers"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #e6eef2;"><div class="game-image"><img src="images\Billy the Wizard.png" alt="Billy the Wizard" onclick="openImageModal(this, 'Billy the Wizard')"></div><div class="game-content"><h3 class="game-title">Billy the Wizard</h3><ul class="category-list">
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=All_Levels-Wii&x=9d8gp66k-789ky03l.8107xkol" target="_blank" rel="noopener noreferrer" class="category-name">All Levels</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/yoed941z" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #e6eef2; border-color: #ffffff; color: #000000;">38m 41s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 🥇 1er</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-billy'); return false;">Copier</button>
+                </li>
+            
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Broomstick_Grand_Prix-Wii&x=w20y0w5k-p8591x0n.jqz40w2l" target="_blank" rel="noopener noreferrer" class="category-name">Broomstick Grand Prix</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/mkwd743m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #e6eef2; border-color: #ffffff; color: #000000;">10m 22s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 🥇 1er</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-billy-bgp'); return false;">Copier</button>
+                </li>
+            
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Green_Dragon_Attack-Wii&x=rkljwqnd-ylpv4o6l.21dd28p1" target="_blank" rel="noopener noreferrer" class="category-name">Green Dragon Attack</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/me2198qm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #e6eef2; border-color: #ffffff; color: #000000;">15m 08s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 🥇 1er</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-billy-gda'); return false;">Copier</button>
+                </li>
+            
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Spell_Book_Chaos-Wii&x=ndx1ymr2-onv6me78.jqz4022l" target="_blank" rel="noopener noreferrer" class="category-name">Spell Book Chaos</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/ylj1o42m" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #e6eef2; border-color: #ffffff; color: #000000;">9m 34s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 🥇 1er</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-billy-sbc'); return false;">Copier</button>
+                </li>
+            
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/billy_the_wizard_rocket_broomstick_racing?h=Wizard_School&x=wdm80wo2" target="_blank" rel="noopener noreferrer" class="category-name">Wizard School</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/billy_the_wizard_rocket_broomstick_racing/run/z00l6wjz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #e6eef2; border-color: #ffffff; color: #000000;">1m 45s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 🥇 1er</span>
+                            
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-billy-ws'); return false;">Copier</button>
+                </li>
+            </ul></div></div></div></div></section><section class="category-section"><div class="category-header" style="background: #2b2b2b;" onclick="toggleCategory('Megadrive_Divers')"><div class="category-header-content"><div class="category-image-wrapper"><div class="category-image-container"><img src="category_images/Megadrive Divers.png" alt="Megadrive Divers" class="category-header-image"></div></div><h2 class="category-title-text">Megadrive Divers</h2></div></div><div class="category-content expanded" id="Megadrive_Divers"><div class="games-grid"><div class="game-card" style="border-left: 4px solid #2b2b2b;"><div class="game-image"><img src="images\Talulu le Magicien (Jap).png" alt="Talulu le Magicien" onclick="openImageModal(this, 'Talulu le Magicien')"></div><div class="game-content"><h3 class="game-title">Talulu le Magicien</h3><ul class="category-list">
+                <li class="category-item">
+                    <div class="category-details">
+                        <a href="https://www.speedrun.com/fr-FR/magical_taruruuto-kun?h=Any&x=n2yjv9m2" target="_blank" rel="noopener noreferrer" class="category-name">Any%</a>
+                        <div class="pb-time-line">
+                            <a href="http://www.speedrun.com/magical_taruruuto-kun/run/y6gwdkjm" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #2b2b2b; border-color: #777777; color: #ffffff;">17m 44s</a>
+                        </div>
+                        <div class="world-ranks-line">
+                            <span class="world-rank">🌍 #11</span>
+                            <span class="best-rank">📈 Historique 🌍: #8</span>
+                        </div>
+                        <div class="french-ranks-line">
+                            <span class="french-rank">🇫🇷  🥇 1er</span>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <button class="copy-link" onclick="copyText(this, '!pb-talulu'); return false;">Copier</button>
                 </li>
             </ul></div></div></div></div></section>
             </div>
@@ -1859,7 +2026,7 @@
     </div>
 
     <footer>
-        <p>Dernière mise à jour: 08/01/2026 à 19:38</p>
+        <p>Dernière mise à jour: 13/01/2026 à 19:22</p>
     </footer>
 
     <script>
