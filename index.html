@@ -8,13 +8,13 @@
                 <style>
         
             :root {
-                --global-color: #006bb5;
-                --global-color-light: #3399ff;
-                --global-color-rgba: rgba(0, 107, 181, 0.3);
+                --global-color: #0056b5;
+                --global-color-light: #1c87ff;
+                --global-color-rgba: rgba(0, 86, 181, 0.3);
                 --marathon-color: #2ecc71;
-                --marathon-color-light: #5ee0a0;
+                --marathon-color-light: #7ee1a8;
                 --commentary-color: #d8b4fe;
-                --commentary-color-light: #e9c9ff;
+                --commentary-color-light: #ffffff;
             }
 
             /* Reset & base */
@@ -748,6 +748,76 @@
             .marathon-link.debrief::before {
                 content: "📊";
             }
+            
+            /* Bloc restreams */
+            .marathon-restreams {
+                margin-top: 1rem;
+                padding-top: 0.8rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .restream-title {
+                color: #4dabf7;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                font-size: 0.95rem;
+            }
+            .restream-item {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                padding: 0.5rem 0.7rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                margin-top: 0.4rem;
+                border-left: 3px solid var(--marathon-color);
+                flex-wrap: wrap;
+                transition: background 0.3s ease;
+            }
+            .restream-item:hover {
+                background: rgba(255, 255, 255, 0.09);
+            }
+            .restream-flag {
+                font-size: 1.5rem;
+                line-height: 1;
+                filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+            }
+            .restream-country {
+                font-weight: 700;
+                color: #fff;
+                font-size: 0.9rem;
+                min-width: 28px;
+            }
+            .restream-comms {
+                flex: 1;
+                color: #ddd;
+                font-size: 0.9rem;
+                min-width: 120px;
+            }
+            .restream-comms .player-badge {
+                font-size: 0.8rem;
+                padding: 0.15rem 0.5rem;
+            }
+            .restream-vod {
+                margin-left: auto;
+            }
+
+            /* Estimate et coloration du temps marathon */
+            .marathon-estimate {
+                margin: 0.3rem 0;
+                font-size: 0.9rem;
+                color: #e0e0e0;
+            }
+            .marathon-estimate strong {
+                color: var(--marathon-color);
+            }
+
+            /* Coloration de la police du temps marathon selon l'estimate (pas de fond, pas d'ombre) */
+            .marathon-time strong.time-under-estimate {
+                color: #51cf66;
+            }
+            .marathon-time strong.time-over-estimate {
+                color: #ff6b6b;
+            }
 
             /* Bouton historique */
             .history-btn {
@@ -1368,8 +1438,8 @@
                                             
                                             <div class="run-container" style="margin-bottom: 0.8rem;">
                                                 <div class="pb-time-line"><a href="https://www.speedrun.com/oot/runs/z5643kjy" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #7b8100; border-color: #f4ff1b; color: #ffffff;">5m 40s</a> <button class="history-btn" onclick="showHistory('oot_q25g198d__solo'); return false;">📊</button></div>
-                                                <div class="world-ranks-line"><span class="world-rank">🌍 #150</span> <span class="best-rank">📈 Historique 🌍: #145</span></div>
-                                                <span class="french-rank">🇫🇷 #19</span>
+                                                <div class="world-ranks-line"><span class="world-rank">🌍 #151</span> <span class="best-rank">📈 Historique 🌍: #145</span></div>
+                                                <span class="french-rank">🇫🇷 #20</span>
                                                 <span class="best-french-rank">📈 Historique 🇫🇷: #18</span>
                                                 
                                                 
@@ -2084,7 +2154,7 @@
                                             
                                             <div class="run-container" style="margin-bottom: 0.8rem;">
                                                 <div class="pb-time-line"><a href="https://www.speedrun.com/smw/runs/mkx3wrlz" target="_blank" rel="noopener noreferrer" class="pb-time" style="background-color: #cfcfcf; border-color: #ffffff; color: #000000;">12m 50.007s</a> <button class="history-btn" onclick="showHistory('smw_n2y1y72o_yn2wxjn5:81pk8vl7_solo'); return false;">📊</button></div>
-                                                <div class="world-ranks-line"><span class="world-rank">🌍 #995</span> <span class="best-rank">📈 Historique 🌍: #974</span></div>
+                                                <div class="world-ranks-line"><span class="world-rank">🌍 #996</span> <span class="best-rank">📈 Historique 🌍: #974</span></div>
                                                 <span class="french-rank">🇫🇷 #17</span>
                                                 
                                                 
@@ -2599,6 +2669,79 @@
                                 </li>
                             </ul></div></div></div></div></section></div><div id="marathon" class="tab-content"><div class="games-grid">
                         <div class="marathon-card">
+                            <div class="marathon-header" style="background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('marathon_images/Stunfest%202026.png') center/cover; background-size: cover; background-position: center;">
+                                <div class="marathon-header-content">
+                                    <div class="marathon-event-name">Stunfest 2026</div>
+                                    <div class="marathon-date">24/10/2026</div>
+                                    <div class="event-type-badge" style="margin-top: 8px; font-size: 0.9rem; opacity: 0.9;">🏠 Le 360, Rennes</div>
+                                </div>
+                            </div>
+                            <div class="marathon-body">
+                                <div class="marathon-game-image">
+                                    <img src="images/Link%27s%20Awakening%20%28Jap%29.png" alt="Link's Awakening" onclick="openImageModal(this, 'Link\'s Awakening')">
+                                </div>
+                                <div class="marathon-content">
+                                    <h3 class="marathon-game-title">Link's Awakening</h3>
+                                    <a href="https://www.speedrun.com/la?h=Warpless&x=02qeey2y" target="_blank" rel="noopener noreferrer" class="marathon-category">Warpless</a>
+                                    
+                                    <div class="marathon-commentators" style="margin: 0.5rem 0; color: #d8b4fe;">🎙️ Commentateurs : <strong>Benorris, prieR57</strong></div>
+                                    
+                                    <div class="marathon-links">
+                                        
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="marathon-card">
+                            <div class="marathon-header" style="background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('marathon_images/Big%20Bad%20Game-a-thon%202026.png') center/cover; background-size: cover; background-position: center;">
+                                <div class="marathon-header-content">
+                                    <div class="marathon-event-name">Big Bad Game-a-thon 2026</div>
+                                    <div class="marathon-date">26/09/2026</div>
+                                    <div class="event-type-badge" style="margin-top: 8px; font-size: 0.9rem; opacity: 0.9;">💻 En ligne</div>
+                                </div>
+                            </div>
+                            <div class="marathon-body">
+                                <div class="marathon-game-image">
+                                    <img src="images/Les%20Visiteurs%20%20La%20Relique%20de%20Sainte%20Rolande.png" alt="Les Visiteurs : La Relique de Sainte Rolande" onclick="openImageModal(this, 'Les Visiteurs : La Relique de Sainte Rolande')">
+                                </div>
+                                <div class="marathon-content">
+                                    <h3 class="marathon-game-title">Les Visiteurs : La Relique de Sainte Rolande</h3>
+                                    <a href="https://www.speedrun.com/Les_Visiteurs_La_Relique_De_StRolande?h=any-ps1&x=7kj0wv42-jlz0p658.10v8kmwl" target="_blank" rel="noopener noreferrer" class="marathon-category">Any% - PS1</a>
+                                    
+                                    <div class="marathon-commentators" style="margin: 0.5rem 0; color: #d8b4fe;">🎙️ Commentateurs : <strong>Neetsel, Thomiño</strong></div>
+                                    
+                                    <div class="marathon-links">
+                                        
+                                        
+                                    </div>
+                                    
+                            <div class="marathon-restreams">
+                                <div class="restream-title">🌐 Restreams</div>
+                                
+                                <div class="restream-item">
+                                    <span class="restream-flag" title="FR">🇫🇷</span>
+                                    <span class="restream-country">FR</span>
+                                    <span class="restream-comms">🎙️ prieR57, Vadnika</span>
+                                    
+                                </div>
+                            
+                                <div class="restream-item">
+                                    <span class="restream-flag" title="JP">🇯🇵</span>
+                                    <span class="restream-country">JP</span>
+                                    <span class="restream-comms">🎙️ —</span>
+                                    
+                                </div>
+                            
+                            </div>
+                        
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="marathon-card">
                             <div class="marathon-header" style="background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('marathon_images/Nitro%20Summer%20Festival%202.jpg') center/cover; background-size: cover; background-position: center;">
                                 <div class="marathon-header-content">
                                     <div class="marathon-event-name">Nitro Summer Festival 2</div>
@@ -2617,7 +2760,8 @@
                                     <div class="marathon-commentators" style="margin: 0.5rem 0; color: #d8b4fe;">🎙️ Commentateurs : <strong>Nymphea77, WolForan</strong></div>
                                     
                                 <div class="marathon-times">
-                                    <div class="marathon-time">⏱️ Temps marathon: <strong>1:57:55</strong></div>
+                                    <div class="marathon-time">⏱️ Temps marathon: <strong class="time-under-estimate">1:57:55</strong></div>
+                                    <div class="marathon-estimate">🎯 Estimate: <strong>2:00:00</strong></div>
                                     <div class="pb-at-time">📈 PB à l'époque: <strong>1:52:12</strong></div>
                                 </div>
                             
@@ -2625,6 +2769,7 @@
                                         <a href="https://youtu.be/EFuoZDr0i6M?si=M57VB-D4Ga6zUFfp" target="_blank" rel="noopener noreferrer" class="marathon-link vod">VOD</a>
                                         
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -2648,7 +2793,8 @@
                                     <div class="marathon-commentators" style="margin: 0.5rem 0; color: #d8b4fe;">🎙️ Commentateurs : <strong>Nymphea77, WolForan</strong></div>
                                     
                                 <div class="marathon-times">
-                                    <div class="marathon-time">⏱️ Temps marathon: <strong>3:40</strong></div>
+                                    <div class="marathon-time">⏱️ Temps marathon: <strong class="time-under-estimate">3:40</strong></div>
+                                    <div class="marathon-estimate">🎯 Estimate: <strong>5:00</strong></div>
                                     <div class="pb-at-time">📈 PB à l'époque: <strong>2:51</strong></div>
                                 </div>
                             
@@ -2656,6 +2802,7 @@
                                         <a href="https://youtu.be/EFuoZDr0i6M?si=M57VB-D4Ga6zUFfp&t=8340" target="_blank" rel="noopener noreferrer" class="marathon-link vod">VOD</a>
                                         
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -2679,7 +2826,8 @@
                                     <div class="marathon-commentators" style="margin: 0.5rem 0; color: #d8b4fe;">🎙️ Commentateur : <strong>prieR57</strong></div>
                                     
                                 <div class="marathon-times">
-                                    <div class="marathon-time">⏱️ Temps marathon: <strong>18:07</strong></div>
+                                    <div class="marathon-time">⏱️ Temps marathon: <strong class="time-under-estimate">18:07</strong></div>
+                                    <div class="marathon-estimate">🎯 Estimate: <strong>20:00</strong></div>
                                     <div class="pb-at-time">📈 PB à l'époque: <strong>17:17</strong></div>
                                 </div>
                             
@@ -2687,6 +2835,7 @@
                                         <a href="https://youtu.be/tFYPaVy6vqI?si=xk49OPOAY_8RnJgR&t=8599" target="_blank" rel="noopener noreferrer" class="marathon-link vod">VOD</a>
                                         
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -2710,7 +2859,8 @@
                                     <div class="marathon-commentators" style="margin: 0.5rem 0; color: #d8b4fe;">🎙️ Commentateurs : <strong>Nymphea77, WolForan</strong></div>
                                     
                                 <div class="marathon-times">
-                                    <div class="marathon-time">⏱️ Temps marathon: <strong>1:51:54</strong></div>
+                                    <div class="marathon-time">⏱️ Temps marathon: <strong class="time-under-estimate">1:51:54</strong></div>
+                                    <div class="marathon-estimate">🎯 Estimate: <strong>2:00:00</strong></div>
                                     <div class="pb-at-time">📈 PB à l'époque: <strong>1:51:49</strong></div>
                                 </div>
                             
@@ -2718,6 +2868,7 @@
                                         <a href="https://youtu.be/nIE-abvezFI?si=C7BtIm-d_wLGupt8" target="_blank" rel="noopener noreferrer" class="marathon-link vod">VOD</a>
                                         
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -2741,7 +2892,8 @@
                                     <div class="marathon-commentators" style="margin: 0.5rem 0; color: #d8b4fe;">🎙️ Commentateur : <strong>WolForan</strong></div>
                                     
                                 <div class="marathon-times">
-                                    <div class="marathon-time">⏱️ Temps marathon: <strong>7:29.900</strong></div>
+                                    <div class="marathon-time">⏱️ Temps marathon: <strong class="time-under-estimate">7:29.900</strong></div>
+                                    <div class="marathon-estimate">🎯 Estimate: <strong>8:49</strong></div>
                                     <div class="pb-at-time">📈 PB à l'époque: <strong>7:17.490</strong></div>
                                 </div>
                             
@@ -2749,6 +2901,7 @@
                                         <a href="https://youtu.be/Ex5fo-lfChA?si=R8kJHBCfTkLiHMMm" target="_blank" rel="noopener noreferrer" class="marathon-link vod">VOD</a>
                                         
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -2772,14 +2925,16 @@
                                     <div class="marathon-commentators" style="margin: 0.5rem 0; color: #d8b4fe;">🎙️ Commentateurs : <strong>Darksidedu45, Nymphea77</strong></div>
                                     
                                 <div class="marathon-times">
-                                    <div class="marathon-time">⏱️ Temps marathon: <strong>34m 46s</strong></div>
-                                    <div class="pb-at-time">📈 PB à l'époque: <strong>33m 35s</strong></div>
+                                    <div class="marathon-time">⏱️ Temps marathon: <strong class="time-under-estimate">34:46</strong></div>
+                                    <div class="marathon-estimate">🎯 Estimate: <strong>43:00</strong></div>
+                                    <div class="pb-at-time">📈 PB à l'époque: <strong>33:35</strong></div>
                                 </div>
                             
                                     <div class="marathon-links">
                                         <a href="https://youtu.be/oDuVwyOAUVU?si=2Uw3L7pYPnwPD9cn" target="_blank" rel="noopener noreferrer" class="marathon-link vod">VOD</a>
                                         <a href="https://youtu.be/cUUM31iqzU4" target="_blank" rel="noopener noreferrer" class="marathon-link debrief">Débrief</a>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -2803,14 +2958,16 @@
                                     
                                     
                                 <div class="marathon-times">
-                                    <div class="marathon-time">⏱️ Temps marathon: <strong>20m 07s</strong></div>
-                                    <div class="pb-at-time">📈 PB à l'époque: <strong>17m 43s</strong></div>
+                                    <div class="marathon-time">⏱️ Temps marathon: <strong class="time-under-estimate">20:07</strong></div>
+                                    <div class="marathon-estimate">🎯 Estimate: <strong>25:00</strong></div>
+                                    <div class="pb-at-time">📈 PB à l'époque: <strong>17:43</strong></div>
                                 </div>
                             
                                     <div class="marathon-links">
                                         <a href="https://www.youtube.com/watch?v=XvGy4mm6_uA" target="_blank" rel="noopener noreferrer" class="marathon-link vod">VOD</a>
                                         
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -3066,7 +3223,7 @@
         </div>
         
         <footer>
-            <p>Dernière mise à jour: 16/09/2026 à 02:12</p>
+            <p>Dernière mise à jour: 22/09/2026 à 16:21</p>
             
         </footer>
         
